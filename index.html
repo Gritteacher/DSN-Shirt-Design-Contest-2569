@@ -283,6 +283,7 @@
       display: grid;
       place-items: center;
       min-height: 430px;
+      padding: 8px 0;
     }
 
     .shirt-note {
@@ -296,6 +297,15 @@
       font-size: 13px;
       font-weight: 700;
       box-shadow: 0 10px 24px rgba(11, 95, 58, 0.18);
+      z-index: 3;
+    }
+
+    .shirt-photo {
+      width: min(100%, 420px);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 22px 24px rgba(11, 95, 58, 0.12));
+      background: transparent;
     }
 
     .shirt-caption {
@@ -304,7 +314,8 @@
       text-align: center;
       color: var(--muted);
       font-size: 13px;
-      margin-top: -16px;
+      margin-top: -8px;
+      line-height: 1.7;
     }
 
     .section {
@@ -462,33 +473,6 @@
       margin: 10px 0 0;
       line-height: 1.8;
       color: var(--muted);
-    }
-
-    .criteria-table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: 0 14px 42px rgba(11, 95, 58, 0.07);
-    }
-
-    .criteria-table th,
-    .criteria-table td {
-      padding: 16px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-    }
-
-    .criteria-table th {
-      background: var(--green);
-      color: #fff;
-    }
-
-    .criteria-table td:last-child,
-    .criteria-table th:last-child {
-      text-align: right;
-      font-weight: 800;
     }
 
     .prize-grid {
@@ -688,7 +672,6 @@
         <a href="#about">รายละเอียด</a>
         <a href="#theme">ธีม</a>
         <a href="#rules">กติกา</a>
-        <a href="#criteria">เกณฑ์</a>
         <a href="#apply">สมัคร</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -733,40 +716,20 @@
         </div>
 
         <div class="mockup-card">
-          <div class="shirt-note">เสื้อคอปกสีขาวล้วน</div>
+          <div class="shirt-note">เสื้อคอปกสีขาวตัวอย่าง</div>
+
           <div class="shirt-wrap">
-            <svg width="100%" viewBox="0 0 480 520" role="img" aria-label="เสื้อขาวตัวอย่าง">
-              <defs>
-                <filter id="shirtShadow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0b5f3a" flood-opacity="0.18"/>
-                </filter>
-              </defs>
-
-              <path d="M166 72 L210 42 H270 L314 72 L405 122 L356 214 L324 196 L324 444 Q324 466 302 466 H178 Q156 466 156 444 L156 196 L124 214 L75 122 Z"
-                    fill="#ffffff" stroke="#dfe8e1" stroke-width="4" filter="url(#shirtShadow)"/>
-
-              <path d="M209 44 L240 106 L271 44" fill="#f8fbf8" stroke="#dfe8e1" stroke-width="4"/>
-              <path d="M200 54 L240 118 L280 54 L260 134 H220 Z" fill="#ffffff" stroke="#dfe8e1" stroke-width="4"/>
-              <line x1="240" y1="118" x2="240" y2="250" stroke="#e5eee7" stroke-width="4"/>
-              <circle cx="240" cy="150" r="5" fill="#dfe8e1"/>
-              <circle cx="240" cy="180" r="5" fill="#dfe8e1"/>
-              <circle cx="240" cy="210" r="5" fill="#dfe8e1"/>
-
-              <rect x="172" y="242" width="136" height="58" rx="20"
-                    fill="rgba(241,200,75,0.25)" stroke="#f1c84b" stroke-width="2"/>
-              <text x="240" y="280" text-anchor="middle"
-                    font-family="Prompt, sans-serif" font-size="28" font-weight="800" fill="#0b5f3a">
-                ตัวอย่าง
-              </text>
-
-              <text x="240" y="348" text-anchor="middle"
-                    font-family="Prompt, sans-serif" font-size="16" font-weight="700" fill="#b7c3b9">
-                ให้นักเรียนออกแบบลวดลายเอง
-              </text>
-            </svg>
+            <!-- ใช้ไฟล์จาก Wikimedia Commons -->
+            <img
+              class="shirt-photo"
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Polo%20shirt%203D.jpg"
+              alt="เสื้อคอปกสีขาวตัวอย่าง"
+            >
           </div>
+
           <p class="shirt-caption">
-            ภาพเสื้อเป็นเพียงตัวอย่างรูปทรงคอปกสีขาวล้วน ไม่ใช่แบบลวดลายจริง
+            ภาพเสื้อเป็นเพียงตัวอย่างรูปทรงเสื้อคอปกสีขาวล้วน<br>
+            สำหรับใช้เป็นต้นแบบให้นักเรียนออกแบบลวดลายและสีสันของผลงาน
           </p>
         </div>
       </div>
@@ -895,33 +858,6 @@
             <p>ห้ามใช้ปัญญาประดิษฐ์ หรือ AI ในการสร้าง ออกแบบ ดัดแปลง หรือปรับแต่งผลงาน ไม่ว่าทั้งหมดหรือบางส่วน หากตรวจพบ คณะกรรมการขอสงวนสิทธิ์ในการตัดสิทธิ์ผลงานดังกล่าวโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</p>
           </details>
         </div>
-      </div>
-    </section>
-
-    <section id="criteria" class="section">
-      <div class="container">
-        <div class="section-title">
-          <div class="eyebrow">Criteria</div>
-          <h2>เกณฑ์การตัดสิน</h2>
-        </div>
-
-        <table class="criteria-table">
-          <thead>
-            <tr>
-              <th>เกณฑ์การตัดสิน</th>
-              <th>คะแนน</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>ความคิดสร้างสรรค์และความสวยงามของผลงาน</td><td>25</td></tr>
-            <tr><td>ความสอดคล้องกับธีม “ตำนานแห่งรัก : A Legend of Love”</td><td>20</td></tr>
-            <tr><td>การสื่อสารอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี</td><td>20</td></tr>
-            <tr><td>ความเหมาะสมต่อการใช้งานจริงและการผลิตจริง</td><td>15</td></tr>
-            <tr><td>ความครบถ้วนของแบบเสื้อทั้ง 6 ภาพตัวอย่าง</td><td>10</td></tr>
-            <tr><td>การอธิบายแนวคิดการออกแบบ</td><td>10</td></tr>
-            <tr><td><strong>รวม</strong></td><td><strong>100</strong></td></tr>
-          </tbody>
-        </table>
       </div>
     </section>
 
@@ -1056,7 +992,7 @@
   </footer>
 
   <script>
-    const FORM_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyo_k_FH8U4ZW6YM0uDthDTbEKq5jvXe6jjex5rJbgK4ONTGKRv4wCWuTofufqKYxDE7w/exec';
+    const FORM_WEB_APP_URL = 'วางลิงก์ Google Apps Script Web App ตรงนี้';
 
     const applyFrame = document.getElementById('applyFrame');
     const frameFallback = document.getElementById('frameFallback');
