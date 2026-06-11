@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>การประกวดออกแบบเสื้อกีฬาสีภายใน 2569</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #0b5f3a;
+      --green-2: #0f7a4b;
+      --yellow: #f1c84b;
+      --cream: #fff8e8;
+      --cream-2: #f7efd8;
+      --white: #ffffff;
+      --ink: #173626;
+      --muted: #6d7d72;
+      --line: rgba(11, 95, 58, 0.14);
+      --danger: #b42318;
+      --success: #0b7a42;
+      --shadow: 0 18px 50px rgba(15, 85, 52, 0.13);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Prompt', 'Sarabun', sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 5%, rgba(241, 200, 75, 0.28), transparent 26%),
+        radial-gradient(circle at 92% 10%, rgba(11, 95, 58, 0.18), transparent 30%),
+        linear-gradient(180deg, #fffdf5 0%, var(--cream) 55%, #ffffff 100%);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: rgba(255, 253, 245, 0.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 230px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+      padding: 4px;
+      box-shadow: 0 8px 24px rgba(11, 95, 58, 0.12);
+    }
+
+    .brand-title {
+      line-height: 1.2;
+    }
+
+    .brand-title strong {
+      display: block;
+      font-size: 15px;
+      color: var(--green);
+    }
+
+    .brand-title span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .menu a {
+      opacity: 0.86;
+    }
+
+    .menu a:hover {
+      color: var(--green);
+      opacity: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(11, 95, 58, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(11, 95, 58, 0.26);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--green);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .hero {
+      position: relative;
+      padding: 76px 0 46px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(11, 95, 58, 0.18);
+      background: rgba(255, 255, 255, 0.68);
+      color: var(--green);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      margin: 20px 0 10px;
+      font-size: clamp(36px, 5.5vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--green);
+    }
+
+    .hero h1 span {
+      color: var(--ink);
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: clamp(18px, 2.3vw, 28px);
+      font-weight: 700;
+      color: #986f00;
+    }
+
+    .hero-desc {
+      margin: 18px 0 24px;
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 690px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .date-card {
+      margin-top: 26px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 14px 18px;
+      box-shadow: 0 12px 36px rgba(11, 95, 58, 0.09);
+    }
+
+    .date-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(241, 200, 75, 0.24);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+
+    .date-card strong {
+      display: block;
+      color: var(--green);
+      font-size: 15px;
+    }
+
+    .date-card span {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .mockup-card {
+      position: relative;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 248, 232, 0.86));
+      border: 1px solid rgba(11, 95, 58, 0.13);
+      border-radius: 34px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .mockup-card::before {
+      content: '';
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: rgba(241, 200, 75, 0.36);
+    }
+
+    .mockup-card::after {
+      content: '';
+      position: absolute;
+      inset: -70px auto auto -70px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(11, 95, 58, 0.09);
+    }
+
+    .shirt-wrap {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      min-height: 430px;
+    }
+
+    .shirt-note {
+      position: absolute;
+      right: 22px;
+      top: 20px;
+      background: var(--green);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(11, 95, 58, 0.18);
+    }
+
+    .shirt-caption {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: -16px;
+    }
+
+    .section {
+      padding: 54px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-title .eyebrow {
+      color: #9a7200;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(28px, 3.6vw, 44px);
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .section-title p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 42px rgba(11, 95, 58, 0.08);
+    }
+
+    .about-card {
+      padding: 28px;
+      line-height: 1.95;
+      color: #415349;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      padding: 24px;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: rgba(241, 200, 75, 0.25);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 8px;
+      color: var(--green);
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .theme-box {
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+      background:
+        linear-gradient(135deg, rgba(11, 95, 58, 0.95), rgba(11, 95, 58, 0.82)),
+        radial-gradient(circle at 80% 10%, rgba(241, 200, 75, 0.65), transparent 30%);
+      border-radius: 34px;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .theme-box h2 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.1;
+    }
+
+    .theme-box p {
+      max-width: 760px;
+      line-height: 1.9;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+
+    .file-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+    }
+
+    .purple { background: #8e5ac7; }
+    .blue { background: #2468d8; }
+    .orange { background: #ef8d2f; }
+    .pink { background: #f47ab6; }
+    .red { background: #d63a32; }
+    .green-yellow {
+      background: linear-gradient(135deg, var(--green) 0 50%, var(--yellow) 50% 100%);
+    }
+
+    .rule-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    details p {
+      margin: 10px 0 0;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .criteria-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 14px 42px rgba(11, 95, 58, 0.07);
+    }
+
+    .criteria-table th,
+    .criteria-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .criteria-table th {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .criteria-table td:last-child,
+    .criteria-table th:last-child {
+      text-align: right;
+      font-weight: 800;
+    }
+
+    .prize-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 18px;
+    }
+
+    .prize {
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prize.first {
+      background: linear-gradient(135deg, #fff, #fff4c9);
+      border-color: rgba(241, 200, 75, 0.5);
+    }
+
+    .prize h3 {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 22px;
+    }
+
+    .prize .money {
+      font-size: 34px;
+      font-weight: 800;
+      color: #9a7200;
+    }
+
+    .prize p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      padding: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .form-card {
+      padding: 26px;
+      background: rgba(255,255,255,.9);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 700;
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(11, 95, 58, 0.18);
+      border-radius: 16px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 15px;
+      background: #fff;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(11, 95, 58, 0.08);
+    }
+
+    .upload-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .upload-box {
+      padding: 16px;
+      background: #fff;
+      border: 1px dashed rgba(11, 95, 58, 0.28);
+      border-radius: 18px;
+    }
+
+    .upload-box small {
+      display: block;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(11, 95, 58, 0.04);
+      border: 1px solid var(--line);
+    }
+
+    .check-item input {
+      width: auto;
+      margin-top: 5px;
+    }
+
+    .progress-wrap {
+      display: none;
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .progress-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .progress-bar {
+      height: 16px;
+      background: rgba(11, 95, 58, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green), var(--yellow));
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .status-box {
+      display: none;
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 18px;
+      line-height: 1.8;
+    }
+
+    .status-success {
+      display: block;
+      background: rgba(11, 122, 66, 0.08);
+      border: 1px solid rgba(11, 122, 66, 0.22);
+      color: var(--success);
+    }
+
+    .status-error {
+      display: block;
+      background: rgba(180, 35, 24, 0.07);
+      border: 1px solid rgba(180, 35, 24, 0.22);
+      color: var(--danger);
+    }
+
+    .status-box a {
+      text-decoration: underline;
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 34px 0;
+      background: var(--green);
+      color: rgba(255,255,255,.88);
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer strong {
+      display: block;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 8px 10px;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .menu {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .prize-grid,
+      .steps,
+      .form-grid,
+      .upload-grid,
+      .file-list {
+        grid-template-columns: 1fr;
+      }
+
+      .shirt-wrap {
+        min-height: 320px;
+      }
+
+      .section {
+        padding: 42px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav {
+        height: 68px;
+      }
+
+      .brand-title span {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .mockup-card {
+        padding: 18px;
+        border-radius: 26px;
+      }
+
+      .theme-box {
+        padding: 26px;
+        border-radius: 26px;
+      }
+
+      .form-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <img
+          class="brand-logo"
+          src="https://www.tsn.ac.th/web/wp-content/uploads/2013/12/Logo_Blue-700x639.png"
+          alt="โลโก้โรงเรียนเทพศิรินทร์ นนทบุรี"
+        >
+        <div class="brand-title">
+          <strong>งานคณะสี ท.ศ.น.</strong>
+          <span>Sport Shirt Design Contest 2569</span>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a href="#about">รายละเอียด</a>
+        <a href="#theme">ธีม</a>
+        <a href="#rules">กติกา</a>
+        <a href="#criteria">เกณฑ์</a>
+        <a href="#apply">สมัคร</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#apply">สมัครส่งผลงาน</a>
+      <button class="mobile-menu-btn" onclick="location.href='#apply'">สมัคร</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">🏆 เปิดรับผลงาน 12–22 มิถุนายน 2569</div>
+
+          <h1>
+            การประกวดออกแบบ<br>
+            <span>เสื้อกีฬาสีภายใน</span>
+          </h1>
+
+          <p class="subtitle">
+            โรงเรียนเทพศิรินทร์ นนทบุรี ประจำปีการศึกษา 2569
+          </p>
+
+          <p class="hero-desc">
+            ร่วมออกแบบเสื้อกีฬาสีภายในรูปแบบใหม่ ที่มีความทันสมัย สวยงาม เหมาะสมต่อการใช้งาน
+            และสื่อสารอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี ได้อย่างสร้างสรรค์
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#apply">ส่งผลงานเข้าประกวด</a>
+            <a class="btn btn-secondary" href="#rules">อ่านกติกา</a>
+          </div>
+
+          <div class="date-card">
+            <div class="date-icon">📅</div>
+            <div>
+              <strong>ระยะเวลาการส่งผลงาน</strong>
+              <span>12 มิถุนายน – 22 มิถุนายน 2569</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-card">
+          <div class="shirt-note">เสื้อคอปกสีขาวล้วน</div>
+          <div class="shirt-wrap">
+            <svg width="100%" viewBox="0 0 480 520" role="img" aria-label="เสื้อขาวตัวอย่าง">
+              <defs>
+                <filter id="shirtShadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0b5f3a" flood-opacity="0.18"/>
+                </filter>
+              </defs>
+
+              <path d="M166 72 L210 42 H270 L314 72 L405 122 L356 214 L324 196 L324 444 Q324 466 302 466 H178 Q156 466 156 444 L156 196 L124 214 L75 122 Z"
+                    fill="#ffffff" stroke="#dfe8e1" stroke-width="4" filter="url(#shirtShadow)"/>
+
+              <path d="M209 44 L240 106 L271 44" fill="#f8fbf8" stroke="#dfe8e1" stroke-width="4"/>
+              <path d="M200 54 L240 118 L280 54 L260 134 H220 Z" fill="#ffffff" stroke="#dfe8e1" stroke-width="4"/>
+              <line x1="240" y1="118" x2="240" y2="250" stroke="#e5eee7" stroke-width="4"/>
+              <circle cx="240" cy="150" r="5" fill="#dfe8e1"/>
+              <circle cx="240" cy="180" r="5" fill="#dfe8e1"/>
+              <circle cx="240" cy="210" r="5" fill="#dfe8e1"/>
+
+              <rect x="172" y="242" width="136" height="58" rx="20"
+                    fill="rgba(241,200,75,0.25)" stroke="#f1c84b" stroke-width="2"/>
+              <text x="240" y="280" text-anchor="middle"
+                    font-family="Prompt, sans-serif" font-size="28" font-weight="800" fill="#0b5f3a">
+                ตัวอย่าง
+              </text>
+
+              <text x="240" y="348" text-anchor="middle"
+                    font-family="Prompt, sans-serif" font-size="16" font-weight="700" fill="#b7c3b9">
+                ให้นักเรียนออกแบบลวดลายเอง
+              </text>
+            </svg>
+          </div>
+          <p class="shirt-caption">
+            ภาพเสื้อเป็นเพียงตัวอย่างรูปทรงคอปกสีขาวล้วน ไม่ใช่แบบลวดลายจริง
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">About</div>
+          <h2>ที่มาและวัตถุประสงค์</h2>
+          <p>การประกวดออกแบบเสื้อกีฬาสีภายใน ประจำปีการศึกษา 2569</p>
+        </div>
+
+        <div class="card about-card">
+          งานคณะสี กลุ่มบริหารงานกิจการนักเรียน โรงเรียนเทพศิรินทร์ นนทบุรี ได้จัดการประกวดออกแบบเสื้อกีฬาสีภายใน
+          ประจำปีการศึกษา 2569 เพื่อเปิดโอกาสให้นักเรียนได้มีส่วนร่วมในการออกแบบเสื้อกีฬาสีภายในรูปแบบใหม่
+          สำหรับใช้สวมใส่ในการจัดการเรียนการสอนและการเข้าร่วมกิจกรรมกีฬาสีภายในโรงเรียน
+          โดยมุ่งเน้นให้เสื้อมีความทันสมัย สวยงาม เหมาะสมต่อการใช้งาน
+          และสามารถสื่อสารอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี ได้อย่างสร้างสรรค์
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Eligibility</div>
+          <h2>คุณสมบัติผู้ส่งผลงาน</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card feature-card">
+            <div class="feature-icon">👤</div>
+            <h3>สถานะผู้สมัคร</h3>
+            <p>เป็นนักเรียนโรงเรียนเทพศิรินทร์ นนทบุรี</p>
+          </div>
+
+          <div class="card feature-card">
+            <div class="feature-icon">🎓</div>
+            <h3>ระดับชั้น</h3>
+            <p>มัธยมศึกษาปีที่ 1–6</p>
+          </div>
+
+          <div class="card feature-card">
+            <div class="feature-icon">📌</div>
+            <h3>ปีการศึกษา</h3>
+            <p>ประจำปีการศึกษา 2569</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="theme" class="section">
+      <div class="container">
+        <div class="theme-box">
+          <p style="font-weight:700; color:#f6d66b; margin-top:0;">Theme</p>
+          <h2>ตำนานแห่งรัก :<br>A Legend of Love</h2>
+          <p>
+            ออกแบบเสื้อกีฬาสีภายในที่ถ่ายทอดเรื่องราวของความรัก ความผูกพัน ความสามัคคี
+            และความภาคภูมิใจในอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี
+            ผ่านสี ลวดลาย และองค์ประกอบบนเสื้ออย่างสร้างสรรค์
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="files" class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Submission Files</div>
+          <h2>รายละเอียดไฟล์ที่ต้องส่ง</h2>
+          <p>ผู้เข้าประกวดต้องจัดทำภาพตัวอย่างเสื้อให้ครบทั้ง 5 คณะสี และภาพตัวอย่างเสื้อสีเขียว–เหลือง รวม 6 ภาพตัวอย่าง</p>
+        </div>
+
+        <div class="file-list">
+          <div class="file-item"><span class="dot purple"></span>คณะแม้นนฤมิตร สีม่วง</div>
+          <div class="file-item"><span class="dot blue"></span>คณะเยาวมาลย์อุทิศ สีน้ำเงิน</div>
+          <div class="file-item"><span class="dot orange"></span>คณะนิภานภดล สีแสด/ส้ม</div>
+          <div class="file-item"><span class="dot pink"></span>คณะปิยราชบพิตร สีชมพู</div>
+          <div class="file-item"><span class="dot red"></span>คณะภาณุรังษี สีแดง</div>
+          <div class="file-item"><span class="dot green-yellow"></span>เสื้อสีเขียว–เหลืองของโรงเรียน</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules" class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Rules</div>
+          <h2>กติกาและเงื่อนไข</h2>
+        </div>
+
+        <div class="rule-list">
+          <details open>
+            <summary>1. จำนวนผลงานที่ต้องส่ง</summary>
+            <p>ผู้เข้าประกวดต้องจัดทำภาพตัวอย่างเสื้อให้ครบทั้ง 5 คณะสี และภาพตัวอย่างเสื้อสีเขียว–เหลือง รวมทั้งสิ้น 6 ภาพตัวอย่าง</p>
+          </details>
+
+          <details>
+            <summary>2. รูปแบบเสื้อ</summary>
+            <p>ผลงานต้องเหมาะสมต่อการสวมใส่ได้ทุกเพศ หรือ UNISEX และเหมาะสมสำหรับการเรียนและการเข้าร่วมกิจกรรมกีฬาสีภายในโรงเรียน</p>
+          </details>
+
+          <details>
+            <summary>3. สัญลักษณ์ที่ต้องมี</summary>
+            <p>ต้องปรากฏตราสัญลักษณ์ของโรงเรียน และตราสัญลักษณ์ To Be Number One บริเวณแขนเสื้อด้านซ้าย</p>
+          </details>
+
+          <details>
+            <summary>4. จำนวนผลงานต่อคน</summary>
+            <p>ผู้เข้าประกวด 1 คน สามารถส่งผลงานเข้าร่วมประกวดได้เพียง 1 ผลงานเท่านั้น</p>
+          </details>
+
+          <details>
+            <summary>5. ลิขสิทธิ์ผลงาน</summary>
+            <p>ผลงานต้องออกแบบขึ้นใหม่ ไม่เคยนำเสนอที่ใดมาก่อน ไม่เคยได้รับรางวัล และต้องไม่ละเมิดลิขสิทธิ์หรือทรัพย์สินทางปัญญาของผู้อื่นโดยเด็ดขาด</p>
+          </details>
+
+          <details>
+            <summary>6. เครื่องมือออกแบบ</summary>
+            <p>สามารถออกแบบผลงานโดยใช้โปรแกรมสำเร็จรูปหรือเครื่องมือดิจิทัลในการออกแบบได้</p>
+          </details>
+
+          <details>
+            <summary>7. ข้อห้ามเรื่อง AI</summary>
+            <p>ห้ามใช้ปัญญาประดิษฐ์ หรือ AI ในการสร้าง ออกแบบ ดัดแปลง หรือปรับแต่งผลงาน ไม่ว่าทั้งหมดหรือบางส่วน หากตรวจพบ คณะกรรมการขอสงวนสิทธิ์ในการตัดสิทธิ์ผลงานดังกล่าวโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="criteria" class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Criteria</div>
+          <h2>เกณฑ์การตัดสิน</h2>
+        </div>
+
+        <table class="criteria-table">
+          <thead>
+            <tr>
+              <th>เกณฑ์การตัดสิน</th>
+              <th>คะแนน</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ความคิดสร้างสรรค์และความสวยงามของผลงาน</td><td>25</td></tr>
+            <tr><td>ความสอดคล้องกับธีม “ตำนานแห่งรัก : A Legend of Love”</td><td>20</td></tr>
+            <tr><td>การสื่อสารอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี</td><td>20</td></tr>
+            <tr><td>ความเหมาะสมต่อการใช้งานจริงและการผลิตจริง</td><td>15</td></tr>
+            <tr><td>ความครบถ้วนของแบบเสื้อทั้ง 6 ภาพตัวอย่าง</td><td>10</td></tr>
+            <tr><td>การอธิบายแนวคิดการออกแบบ</td><td>10</td></tr>
+            <tr><td><strong>รวม</strong></td><td><strong>100</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Awards</div>
+          <h2>รางวัลการประกวด</h2>
+        </div>
+
+        <div class="prize-grid">
+          <div class="card prize first">
+            <h3>รางวัลชนะเลิศ</h3>
+            <div class="money">1,000 บาท</div>
+            <p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p>
+          </div>
+
+          <div class="card prize">
+            <h3>รองชนะเลิศอันดับที่ 1</h3>
+            <div class="money">700 บาท</div>
+            <p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p>
+          </div>
+
+          <div class="card prize">
+            <h3>รองชนะเลิศอันดับที่ 2</h3>
+            <div class="money">500 บาท</div>
+            <p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p>
+          </div>
+        </div>
+
+        <div class="card about-card" style="margin-top:18px; text-align:center;">
+          ผู้ส่งผลงานเข้าประกวดทุกคน ได้รับเกียรติบัตรการเข้าร่วมประกวด
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Steps</div>
+          <h2>ขั้นตอนการสมัคร</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            อ่านรายละเอียด กติกา และเงื่อนไข
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            ออกแบบเสื้อให้ครบทั้ง 6 ภาพตัวอย่าง
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            เตรียมไฟล์ JPG, PNG หรือ PDF
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            กรอกข้อมูลและส่งผลงานในหน้าเว็บ
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Apply Now</div>
+          <h2>สมัครส่งผลงานเข้าประกวด</h2>
+          <p>กรอกข้อมูลให้ครบถ้วน และอัปโหลดไฟล์ผลงานทั้ง 6 ภาพตัวอย่าง</p>
+        </div>
+
+        <form id="applyForm" class="card form-card">
+          <div class="form-grid">
+            <div class="field">
+              <label for="studentId">รหัสนักเรียน</label>
+              <input id="studentId" name="studentId" required>
+            </div>
+
+            <div class="field">
+              <label for="fullName">ชื่อ–นามสกุล</label>
+              <input id="fullName" name="fullName" required>
+            </div>
+
+            <div class="field">
+              <label for="level">ระดับชั้น</label>
+              <select id="level" name="level" required>
+                <option value="">เลือกระดับชั้น</option>
+                <option value="1">ม.1</option>
+                <option value="2">ม.2</option>
+                <option value="3">ม.3</option>
+                <option value="4">ม.4</option>
+                <option value="5">ม.5</option>
+                <option value="6">ม.6</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="room">ห้อง</label>
+              <input id="room" name="room" type="number" min="1" max="20" required>
+            </div>
+
+            <div class="field">
+              <label for="studentNo">เลขที่</label>
+              <input id="studentNo" name="studentNo" type="number" min="1" max="60" required>
+            </div>
+
+            <div class="field">
+              <label for="house">คณะสี</label>
+              <select id="house" name="house" required>
+                <option value="">เลือกคณะสี</option>
+                <option value="คณะแม้นนฤมิตร">คณะแม้นนฤมิตร</option>
+                <option value="คณะเยาวมาลย์อุทิศ">คณะเยาวมาลย์อุทิศ</option>
+                <option value="คณะนิภานภดล">คณะนิภานภดล</option>
+                <option value="คณะปิยราชบพิตร">คณะปิยราชบพิตร</option>
+                <option value="คณะภาณุรังษี">คณะภาณุรังษี</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="phone">เบอร์โทรศัพท์</label>
+              <input id="phone" name="phone" required>
+            </div>
+
+            <div class="field">
+              <label for="email">อีเมล</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="field full">
+              <label for="workTitle">ชื่อผลงาน</label>
+              <input id="workTitle" name="workTitle" required>
+            </div>
+
+            <div class="field full">
+              <label for="concept">แนวคิดการออกแบบ</label>
+              <textarea id="concept" name="concept" required></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="inspiration">แรงบันดาลใจจากธีม “ตำนานแห่งรัก : A Legend of Love”</label>
+              <textarea id="inspiration" name="inspiration" required></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="colorMeaning">คำอธิบายการใช้สีและลวดลาย</label>
+              <textarea id="colorMeaning" name="colorMeaning" required></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="identityMeaning">การสื่อถึงอัตลักษณ์โรงเรียนเทพศิรินทร์ นนทบุรี</label>
+              <textarea id="identityMeaning" name="identityMeaning" required></textarea>
+            </div>
+
+            <div class="field full">
+              <label>อัปโหลดไฟล์ผลงาน</label>
+              <div class="upload-grid">
+                <div class="upload-box">
+                  <label for="filePurple">1. คณะแม้นนฤมิตร สีม่วง</label>
+                  <input id="filePurple" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
+                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
+                </div>
+
+                <div class="upload-box">
+                  <label for="fileBlue">2. คณะเยาวมาลย์อุทิศ สีน้ำเงิน</label>
+                  <input id="fileBlue" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
+                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
+                </div>
+
+                <div class="upload-box">
+                  <label for="fileOrange">3. คณะนิภานภดล สีแสด/ส้ม</label>
+                  <input id="fileOrange" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
+                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
+                </div>
+
+                <div class="upload-box">
+                  <label for="filePink">4. คณะปิยราชบพิตร สีชมพู</label>
+                  <input id="filePink" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
+                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
+                </div>
+
+                <div class="upload-box">
+                  <label for="fileRed">5. คณะภาณุรังษี สีแดง</label>
+                  <input id="fileRed" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
+                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
+                </div>
+
+                <div class="upload-box">
+                  <label for="fileGreenYellow">6. เสื้อสีเขียว–เหลือง</label>
+                  <input id="fileGreenYellow" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
+                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="field full">
+              <label for="extraFiles">ไฟล์เสริมเพิ่มเติม ถ้ามี</label>
+              <input id="extraFiles" type="file" accept=".jpg,.jpeg,.png,.pdf" multiple>
+              <small style="color:var(--muted);">ไม่บังคับ สามารถแนบไฟล์ประกอบเพิ่มเติมได้</small>
+            </div>
+          </div>
+
+          <div class="checklist">
+            <label class="check-item">
+              <input id="acceptOriginal" type="checkbox" required>
+              <span>ข้าพเจ้าขอรับรองว่าผลงานนี้เป็นผลงานที่ออกแบบขึ้นใหม่ด้วยตนเอง ไม่เคยได้รับรางวัล และไม่ละเมิดลิขสิทธิ์ผู้อื่น</span>
+            </label>
+
+            <label class="check-item">
+              <input id="acceptNoAI" type="checkbox" required>
+              <span>ข้าพเจ้ายืนยันว่าไม่ได้ใช้ AI ในการสร้าง ออกแบบ ดัดแปลง หรือปรับแต่งผลงาน ไม่ว่าทั้งหมดหรือบางส่วน</span>
+            </label>
+
+            <label class="check-item">
+              <input id="acceptRules" type="checkbox" required>
+              <span>ข้าพเจ้ายอมรับกติกาและเงื่อนไขการประกวดทุกประการ</span>
+            </label>
+          </div>
+
+          <button id="submitBtn" class="btn btn-primary" type="submit">
+            ส่งผลงานเข้าประกวด
+          </button>
+
+          <div id="progressWrap" class="progress-wrap">
+            <div class="progress-head">
+              <span id="progressText">กำลังเตรียมข้อมูล...</span>
+              <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div id="statusBox" class="status-box"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">FAQ</div>
+          <h2>คำถามที่พบบ่อย</h2>
+        </div>
+
+        <div class="rule-list">
+          <details open>
+            <summary>ส่งผลงานได้กี่ผลงาน?</summary>
+            <p>ผู้เข้าประกวด 1 คน สามารถส่งผลงานได้เพียง 1 ผลงานเท่านั้น</p>
+          </details>
+
+          <details>
+            <summary>ต้องออกแบบกี่แบบ?</summary>
+            <p>ต้องออกแบบภาพตัวอย่างเสื้อครบ 6 ภาพ ได้แก่ 5 คณะสี และเสื้อสีเขียว–เหลือง</p>
+          </details>
+
+          <details>
+            <summary>ใช้โปรแกรมออกแบบได้ไหม?</summary>
+            <p>สามารถใช้โปรแกรมสำเร็จรูปหรือเครื่องมือดิจิทัลในการออกแบบได้</p>
+          </details>
+
+          <details>
+            <summary>ใช้ AI ช่วยออกแบบได้ไหม?</summary>
+            <p>ไม่สามารถใช้ AI ในการสร้าง ออกแบบ ดัดแปลง หรือปรับแต่งผลงานได้ ไม่ว่าทั้งหมดหรือบางส่วน</p>
+          </details>
+
+          <details>
+            <summary>ส่งผลงานได้ถึงวันไหน?</summary>
+            <p>ส่งผลงานได้ระหว่างวันที่ 12 มิถุนายน – 22 มิถุนายน 2569</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>งานคณะสี กลุ่มบริหารงานกิจการนักเรียน</strong>
+      โรงเรียนเทพศิรินทร์ นนทบุรี<br>
+      การประกวดออกแบบเสื้อกีฬาสีภายใน ประจำปีการศึกษา 2569
+    </div>
+  </footer>
+
+  <script>
+    const MAX_FILE_SIZE_MB = 10;
+    const MAX_FILE_SIZE = MAX_FILE_SIZE_MB * 1024 * 1024;
+
+    const REQUIRED_FILES = [
+      { id: 'filePurple', label: '01_คณะแม้นนฤมิตร_สีม่วง' },
+      { id: 'fileBlue', label: '02_คณะเยาวมาลย์อุทิศ_สีน้ำเงิน' },
+      { id: 'fileOrange', label: '03_คณะนิภานภดล_สีแสด' },
+      { id: 'filePink', label: '04_คณะปิยราชบพิตร_สีชมพู' },
+      { id: 'fileRed', label: '05_คณะภาณุรังษี_สีแดง' },
+      { id: 'fileGreenYellow', label: '06_เสื้อสีเขียวเหลือง' }
+    ];
+
+    const ALLOWED_TYPES = [
+      'image/jpeg',
+      'image/png',
+      'application/pdf'
+    ];
+
+    const form = document.getElementById('applyForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressWrap = document.getElementById('progressWrap');
+    const progressText = document.getElementById('progressText');
+    const progressPercent = document.getElementById('progressPercent');
+    const progressFill = document.getElementById('progressFill');
+    const statusBox = document.getElementById('statusBox');
+
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      try {
+        resetStatus();
+        validateGoogleScriptAvailable();
+
+        const formData = collectFormData();
+        const files = collectFiles();
+
+        validateFiles(files);
+
+        submitBtn.disabled = true;
+        progressWrap.style.display = 'block';
+        setProgress(2, 'กำลังตรวจสอบข้อมูลผู้สมัคร...');
+
+        const startResult = await runGS('startSubmission', formData);
+
+        if (!startResult || !startResult.ok) {
+          throw new Error('ไม่สามารถเริ่มการส่งผลงานได้');
+        }
+
+        const uploadedFiles = [];
+        const totalSteps = files.length + 2;
+
+        for (let i = 0; i < files.length; i++) {
+          const item = files[i];
+          const stepPercent = Math.round(((i + 1) / totalSteps) * 90);
+
+          setProgress(stepPercent, `กำลังเตรียมไฟล์ ${i + 1} จาก ${files.length}: ${item.label}`);
+
+          const base64 = await fileToBase64(item.file);
+
+          setProgress(stepPercent, `กำลังอัปโหลดไฟล์ ${i + 1} จาก ${files.length}: ${item.file.name}`);
+
+          const uploaded = await runGS('uploadApplicantFile', {
+            submissionId: startResult.submissionId,
+            folderId: startResult.folderId,
+            label: item.label,
+            fileName: item.file.name,
+            mimeType: item.file.type,
+            base64: base64
+          });
+
+          uploadedFiles.push(uploaded);
+        }
+
+        setProgress(94, 'กำลังสร้างไฟล์ PDF ใบสมัคร...');
+
+        const finalResult = await runGS('finalizeSubmission', {
+          submissionId: startResult.submissionId,
+          folderId: startResult.folderId,
+          uploadedFiles: uploadedFiles
+        });
+
+        setProgress(100, 'ส่งผลงานสำเร็จ');
+
+        showSuccess(`
+          <strong>ส่งผลงานสำเร็จแล้ว</strong><br>
+          ระบบได้บันทึกข้อมูล สร้างโฟลเดอร์ผลงาน และสร้าง PDF ใบสมัครเรียบร้อยแล้ว<br>
+          <a href="${finalResult.folderUrl}" target="_blank">เปิดโฟลเดอร์ผลงาน</a>
+          &nbsp; | &nbsp;
+          <a href="${finalResult.pdfUrl}" target="_blank">เปิดไฟล์ PDF ใบสมัคร</a>
+        `);
+
+        form.reset();
+
+      } catch (err) {
+        showError(err.message || err);
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    function collectFormData() {
+      return {
+        studentId: getValue('studentId'),
+        fullName: getValue('fullName'),
+        level: getValue('level'),
+        room: getValue('room'),
+        studentNo: getValue('studentNo'),
+        house: getValue('house'),
+        phone: getValue('phone'),
+        email: getValue('email'),
+        workTitle: getValue('workTitle'),
+        concept: getValue('concept'),
+        inspiration: getValue('inspiration'),
+        colorMeaning: getValue('colorMeaning'),
+        identityMeaning: getValue('identityMeaning'),
+        acceptOriginal: document.getElementById('acceptOriginal').checked,
+        acceptNoAI: document.getElementById('acceptNoAI').checked,
+        acceptRules: document.getElementById('acceptRules').checked
+      };
+    }
+
+    function collectFiles() {
+      const files = [];
+
+      REQUIRED_FILES.forEach(item => {
+        const input = document.getElementById(item.id);
+        if (input.files && input.files[0]) {
+          files.push({
+            label: item.label,
+            file: input.files[0]
+          });
+        }
+      });
+
+      const extraInput = document.getElementById('extraFiles');
+      if (extraInput.files && extraInput.files.length > 0) {
+        Array.from(extraInput.files).forEach((file, index) => {
+          files.push({
+            label: `07_ไฟล์เสริม_${index + 1}`,
+            file: file
+          });
+        });
+      }
+
+      return files;
+    }
+
+    function validateFiles(files) {
+      const requiredCount = REQUIRED_FILES.length;
+
+      if (files.length < requiredCount) {
+        throw new Error('กรุณาอัปโหลดไฟล์ผลงานหลักให้ครบทั้ง 6 ภาพตัวอย่าง');
+      }
+
+      files.forEach(item => {
+        if (!ALLOWED_TYPES.includes(item.file.type)) {
+          throw new Error(`ไฟล์ ${item.file.name} ไม่ใช่ชนิดที่รองรับ กรุณาใช้ JPG, PNG หรือ PDF`);
+        }
+
+        if (item.file.size > MAX_FILE_SIZE) {
+          throw new Error(`ไฟล์ ${item.file.name} มีขนาดเกิน ${MAX_FILE_SIZE_MB} MB`);
+        }
+      });
+    }
+
+    function getValue(id) {
+      return document.getElementById(id).value.trim();
+    }
+
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+          const result = String(reader.result || '');
+          const base64 = result.includes(',') ? result.split(',')[1] : result;
+          resolve(base64);
+        };
+
+        reader.onerror = () => {
+          reject(new Error(`อ่านไฟล์ ${file.name} ไม่สำเร็จ`));
+        };
+
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function runGS(functionName, payload) {
+      return new Promise((resolve, reject) => {
+        google.script.run
+          .withSuccessHandler(resolve)
+          .withFailureHandler(error => {
+            reject(new Error(error.message || error));
+          })[functionName](payload);
+      });
+    }
+
+    function setProgress(percent, text) {
+      const safePercent = Math.max(0, Math.min(100, percent));
+      progressFill.style.width = safePercent + '%';
+      progressPercent.textContent = safePercent + '%';
+      progressText.textContent = text;
+    }
+
+    function showSuccess(html) {
+      statusBox.className = 'status-box status-success';
+      statusBox.innerHTML = html;
+    }
+
+    function showError(message) {
+      statusBox.className = 'status-box status-error';
+      statusBox.innerHTML = `
+        <strong>ไม่สามารถส่งผลงานได้</strong><br>
+        ${escapeHtml(message)}
+      `;
+      progressText.textContent = 'เกิดข้อผิดพลาด';
+    }
+
+    function resetStatus() {
+      statusBox.className = 'status-box';
+      statusBox.innerHTML = '';
+      setProgress(0, 'กำลังเตรียมข้อมูล...');
+    }
+
+    function validateGoogleScriptAvailable() {
+      if (typeof google === 'undefined' || !google.script || !google.script.run) {
+        throw new Error('หน้านี้ต้องเปิดผ่านลิงก์ Web App ของ Google Apps Script เท่านั้น');
+      }
+    }
+
+    function escapeHtml(text) {
+      return String(text)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+  </script>
+</body>
+</html>
