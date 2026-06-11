@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <base target="_top">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,8 +21,6 @@
       --ink: #173626;
       --muted: #6d7d72;
       --line: rgba(11, 95, 58, 0.14);
-      --danger: #b42318;
-      --success: #0b7a42;
       --shadow: 0 18px 50px rgba(15, 85, 52, 0.13);
       --radius: 24px;
     }
@@ -156,17 +153,6 @@
       border: 1px solid var(--line);
     }
 
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
     .hero {
       position: relative;
       padding: 76px 0 46px;
@@ -263,8 +249,7 @@
 
     .mockup-card {
       position: relative;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 248, 232, 0.86));
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 248, 232, 0.86));
       border: 1px solid rgba(11, 95, 58, 0.13);
       border-radius: 34px;
       padding: 30px;
@@ -402,9 +387,7 @@
       position: relative;
       overflow: hidden;
       padding: 42px;
-      background:
-        linear-gradient(135deg, rgba(11, 95, 58, 0.95), rgba(11, 95, 58, 0.82)),
-        radial-gradient(circle at 80% 10%, rgba(241, 200, 75, 0.65), transparent 30%);
+      background: linear-gradient(135deg, rgba(11, 95, 58, 0.95), rgba(11, 95, 58, 0.82));
       border-radius: 34px;
       color: #fff;
       box-shadow: var(--shadow);
@@ -567,157 +550,31 @@
       margin-bottom: 12px;
     }
 
-    .form-card {
-      padding: 26px;
-      background: rgba(255,255,255,.9);
+    .iframe-card {
+      padding: 18px;
+      background: rgba(255,255,255,.86);
     }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .field {
-      display: grid;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-weight: 700;
-      color: var(--green);
-      font-size: 14px;
-    }
-
-    input,
-    select,
-    textarea {
+    .apply-frame {
       width: 100%;
-      border: 1px solid rgba(11, 95, 58, 0.18);
-      border-radius: 16px;
-      padding: 13px 14px;
-      font-family: inherit;
-      font-size: 15px;
-      background: #fff;
-      outline: none;
+      height: 2100px;
+      border: 0;
+      border-radius: 22px;
+      background: transparent;
     }
 
-    textarea {
-      min-height: 120px;
-      resize: vertical;
+    .frame-fallback {
+      display: none;
+      margin-top: 14px;
+      text-align: center;
+      color: var(--muted);
       line-height: 1.7;
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 4px rgba(11, 95, 58, 0.08);
-    }
-
-    .upload-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .upload-box {
-      padding: 16px;
-      background: #fff;
-      border: 1px dashed rgba(11, 95, 58, 0.28);
-      border-radius: 18px;
-    }
-
-    .upload-box small {
-      display: block;
-      color: var(--muted);
-      margin-top: 6px;
-      line-height: 1.5;
-    }
-
-    .checklist {
-      display: grid;
-      gap: 12px;
-      margin: 18px 0;
-    }
-
-    .check-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 14px;
-      border-radius: 16px;
-      background: rgba(11, 95, 58, 0.04);
-      border: 1px solid var(--line);
-    }
-
-    .check-item input {
-      width: auto;
-      margin-top: 5px;
-    }
-
-    .progress-wrap {
-      display: none;
-      margin-top: 18px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fff;
-    }
-
-    .progress-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 10px;
-      font-weight: 700;
+    .frame-fallback a {
       color: var(--green);
-    }
-
-    .progress-bar {
-      height: 16px;
-      background: rgba(11, 95, 58, 0.1);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--green), var(--yellow));
-      border-radius: 999px;
-      transition: width 0.25s ease;
-    }
-
-    .status-box {
-      display: none;
-      margin-top: 16px;
-      padding: 18px;
-      border-radius: 18px;
-      line-height: 1.8;
-    }
-
-    .status-success {
-      display: block;
-      background: rgba(11, 122, 66, 0.08);
-      border: 1px solid rgba(11, 122, 66, 0.22);
-      color: var(--success);
-    }
-
-    .status-error {
-      display: block;
-      background: rgba(180, 35, 24, 0.07);
-      border: 1px solid rgba(180, 35, 24, 0.22);
-      color: var(--danger);
-    }
-
-    .status-box a {
-      text-decoration: underline;
       font-weight: 800;
+      text-decoration: underline;
     }
 
     .footer {
@@ -761,8 +618,6 @@
       .grid-3,
       .prize-grid,
       .steps,
-      .form-grid,
-      .upload-grid,
       .file-list {
         grid-template-columns: 1fr;
       }
@@ -773,6 +628,10 @@
 
       .section {
         padding: 42px 0;
+      }
+
+      .apply-frame {
+        height: 2500px;
       }
     }
 
@@ -799,8 +658,12 @@
         border-radius: 26px;
       }
 
-      .form-card {
-        padding: 18px;
+      .iframe-card {
+        padding: 8px;
+      }
+
+      .apply-frame {
+        height: 2850px;
       }
     }
   </style>
@@ -1128,172 +991,22 @@
         <div class="section-title">
           <div class="eyebrow">Apply Now</div>
           <h2>สมัครส่งผลงานเข้าประกวด</h2>
-          <p>กรอกข้อมูลให้ครบถ้วน และอัปโหลดไฟล์ผลงานทั้ง 6 ภาพตัวอย่าง</p>
+          <p>กรอกข้อมูลและอัปโหลดผลงานผ่านแบบฟอร์มด้านล่าง</p>
         </div>
 
-        <form id="applyForm" class="card form-card">
-          <div class="form-grid">
-            <div class="field">
-              <label for="studentId">รหัสนักเรียน</label>
-              <input id="studentId" name="studentId" required>
-            </div>
+        <div class="card iframe-card">
+          <iframe
+            id="applyFrame"
+            class="apply-frame"
+            title="แบบฟอร์มสมัครประกวดออกแบบเสื้อกีฬาสีภายใน"
+            loading="lazy">
+          </iframe>
 
-            <div class="field">
-              <label for="fullName">ชื่อ–นามสกุล</label>
-              <input id="fullName" name="fullName" required>
-            </div>
-
-            <div class="field">
-              <label for="level">ระดับชั้น</label>
-              <select id="level" name="level" required>
-                <option value="">เลือกระดับชั้น</option>
-                <option value="1">ม.1</option>
-                <option value="2">ม.2</option>
-                <option value="3">ม.3</option>
-                <option value="4">ม.4</option>
-                <option value="5">ม.5</option>
-                <option value="6">ม.6</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="room">ห้อง</label>
-              <input id="room" name="room" type="number" min="1" max="20" required>
-            </div>
-
-            <div class="field">
-              <label for="studentNo">เลขที่</label>
-              <input id="studentNo" name="studentNo" type="number" min="1" max="60" required>
-            </div>
-
-            <div class="field">
-              <label for="house">คณะสี</label>
-              <select id="house" name="house" required>
-                <option value="">เลือกคณะสี</option>
-                <option value="คณะแม้นนฤมิตร">คณะแม้นนฤมิตร</option>
-                <option value="คณะเยาวมาลย์อุทิศ">คณะเยาวมาลย์อุทิศ</option>
-                <option value="คณะนิภานภดล">คณะนิภานภดล</option>
-                <option value="คณะปิยราชบพิตร">คณะปิยราชบพิตร</option>
-                <option value="คณะภาณุรังษี">คณะภาณุรังษี</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="phone">เบอร์โทรศัพท์</label>
-              <input id="phone" name="phone" required>
-            </div>
-
-            <div class="field">
-              <label for="email">อีเมล</label>
-              <input id="email" name="email" type="email" required>
-            </div>
-
-            <div class="field full">
-              <label for="workTitle">ชื่อผลงาน</label>
-              <input id="workTitle" name="workTitle" required>
-            </div>
-
-            <div class="field full">
-              <label for="concept">แนวคิดการออกแบบ</label>
-              <textarea id="concept" name="concept" required></textarea>
-            </div>
-
-            <div class="field full">
-              <label for="inspiration">แรงบันดาลใจจากธีม “ตำนานแห่งรัก : A Legend of Love”</label>
-              <textarea id="inspiration" name="inspiration" required></textarea>
-            </div>
-
-            <div class="field full">
-              <label for="colorMeaning">คำอธิบายการใช้สีและลวดลาย</label>
-              <textarea id="colorMeaning" name="colorMeaning" required></textarea>
-            </div>
-
-            <div class="field full">
-              <label for="identityMeaning">การสื่อถึงอัตลักษณ์โรงเรียนเทพศิรินทร์ นนทบุรี</label>
-              <textarea id="identityMeaning" name="identityMeaning" required></textarea>
-            </div>
-
-            <div class="field full">
-              <label>อัปโหลดไฟล์ผลงาน</label>
-              <div class="upload-grid">
-                <div class="upload-box">
-                  <label for="filePurple">1. คณะแม้นนฤมิตร สีม่วง</label>
-                  <input id="filePurple" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
-                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
-                </div>
-
-                <div class="upload-box">
-                  <label for="fileBlue">2. คณะเยาวมาลย์อุทิศ สีน้ำเงิน</label>
-                  <input id="fileBlue" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
-                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
-                </div>
-
-                <div class="upload-box">
-                  <label for="fileOrange">3. คณะนิภานภดล สีแสด/ส้ม</label>
-                  <input id="fileOrange" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
-                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
-                </div>
-
-                <div class="upload-box">
-                  <label for="filePink">4. คณะปิยราชบพิตร สีชมพู</label>
-                  <input id="filePink" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
-                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
-                </div>
-
-                <div class="upload-box">
-                  <label for="fileRed">5. คณะภาณุรังษี สีแดง</label>
-                  <input id="fileRed" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
-                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
-                </div>
-
-                <div class="upload-box">
-                  <label for="fileGreenYellow">6. เสื้อสีเขียว–เหลือง</label>
-                  <input id="fileGreenYellow" type="file" accept=".jpg,.jpeg,.png,.pdf" required>
-                  <small>JPG, PNG หรือ PDF ไม่เกิน 10 MB</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="field full">
-              <label for="extraFiles">ไฟล์เสริมเพิ่มเติม ถ้ามี</label>
-              <input id="extraFiles" type="file" accept=".jpg,.jpeg,.png,.pdf" multiple>
-              <small style="color:var(--muted);">ไม่บังคับ สามารถแนบไฟล์ประกอบเพิ่มเติมได้</small>
-            </div>
+          <div id="frameFallback" class="frame-fallback">
+            หากแบบฟอร์มไม่แสดงผล กรุณา
+            <a id="openFormLink" href="#" target="_blank" rel="noopener">เปิดแบบฟอร์มในหน้าใหม่</a>
           </div>
-
-          <div class="checklist">
-            <label class="check-item">
-              <input id="acceptOriginal" type="checkbox" required>
-              <span>ข้าพเจ้าขอรับรองว่าผลงานนี้เป็นผลงานที่ออกแบบขึ้นใหม่ด้วยตนเอง ไม่เคยได้รับรางวัล และไม่ละเมิดลิขสิทธิ์ผู้อื่น</span>
-            </label>
-
-            <label class="check-item">
-              <input id="acceptNoAI" type="checkbox" required>
-              <span>ข้าพเจ้ายืนยันว่าไม่ได้ใช้ AI ในการสร้าง ออกแบบ ดัดแปลง หรือปรับแต่งผลงาน ไม่ว่าทั้งหมดหรือบางส่วน</span>
-            </label>
-
-            <label class="check-item">
-              <input id="acceptRules" type="checkbox" required>
-              <span>ข้าพเจ้ายอมรับกติกาและเงื่อนไขการประกวดทุกประการ</span>
-            </label>
-          </div>
-
-          <button id="submitBtn" class="btn btn-primary" type="submit">
-            ส่งผลงานเข้าประกวด
-          </button>
-
-          <div id="progressWrap" class="progress-wrap">
-            <div class="progress-head">
-              <span id="progressText">กำลังเตรียมข้อมูล...</span>
-              <span id="progressPercent">0%</span>
-            </div>
-            <div class="progress-bar">
-              <div id="progressFill" class="progress-fill"></div>
-            </div>
-          </div>
-
-          <div id="statusBox" class="status-box"></div>
-        </form>
+        </div>
       </div>
     </section>
 
@@ -1343,243 +1056,23 @@
   </footer>
 
   <script>
-    const MAX_FILE_SIZE_MB = 10;
-    const MAX_FILE_SIZE = MAX_FILE_SIZE_MB * 1024 * 1024;
+    const FORM_WEB_APP_URL = 'วางลิงก์ Google Apps Script Web App ตรงนี้';
 
-    const REQUIRED_FILES = [
-      { id: 'filePurple', label: '01_คณะแม้นนฤมิตร_สีม่วง' },
-      { id: 'fileBlue', label: '02_คณะเยาวมาลย์อุทิศ_สีน้ำเงิน' },
-      { id: 'fileOrange', label: '03_คณะนิภานภดล_สีแสด' },
-      { id: 'filePink', label: '04_คณะปิยราชบพิตร_สีชมพู' },
-      { id: 'fileRed', label: '05_คณะภาณุรังษี_สีแดง' },
-      { id: 'fileGreenYellow', label: '06_เสื้อสีเขียวเหลือง' }
-    ];
+    const applyFrame = document.getElementById('applyFrame');
+    const frameFallback = document.getElementById('frameFallback');
+    const openFormLink = document.getElementById('openFormLink');
 
-    const ALLOWED_TYPES = [
-      'image/jpeg',
-      'image/png',
-      'application/pdf'
-    ];
-
-    const form = document.getElementById('applyForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const progressWrap = document.getElementById('progressWrap');
-    const progressText = document.getElementById('progressText');
-    const progressPercent = document.getElementById('progressPercent');
-    const progressFill = document.getElementById('progressFill');
-    const statusBox = document.getElementById('statusBox');
-
-    form.addEventListener('submit', async function(event) {
-      event.preventDefault();
-
-      try {
-        resetStatus();
-        validateGoogleScriptAvailable();
-
-        const formData = collectFormData();
-        const files = collectFiles();
-
-        validateFiles(files);
-
-        submitBtn.disabled = true;
-        progressWrap.style.display = 'block';
-        setProgress(2, 'กำลังตรวจสอบข้อมูลผู้สมัคร...');
-
-        const startResult = await runGS('startSubmission', formData);
-
-        if (!startResult || !startResult.ok) {
-          throw new Error('ไม่สามารถเริ่มการส่งผลงานได้');
-        }
-
-        const uploadedFiles = [];
-        const totalSteps = files.length + 2;
-
-        for (let i = 0; i < files.length; i++) {
-          const item = files[i];
-          const stepPercent = Math.round(((i + 1) / totalSteps) * 90);
-
-          setProgress(stepPercent, `กำลังเตรียมไฟล์ ${i + 1} จาก ${files.length}: ${item.label}`);
-
-          const base64 = await fileToBase64(item.file);
-
-          setProgress(stepPercent, `กำลังอัปโหลดไฟล์ ${i + 1} จาก ${files.length}: ${item.file.name}`);
-
-          const uploaded = await runGS('uploadApplicantFile', {
-            submissionId: startResult.submissionId,
-            folderId: startResult.folderId,
-            label: item.label,
-            fileName: item.file.name,
-            mimeType: item.file.type,
-            base64: base64
-          });
-
-          uploadedFiles.push(uploaded);
-        }
-
-        setProgress(94, 'กำลังสร้างไฟล์ PDF ใบสมัคร...');
-
-        const finalResult = await runGS('finalizeSubmission', {
-          submissionId: startResult.submissionId,
-          folderId: startResult.folderId,
-          uploadedFiles: uploadedFiles
-        });
-
-        setProgress(100, 'ส่งผลงานสำเร็จ');
-
-        showSuccess(`
-          <strong>ส่งผลงานสำเร็จแล้ว</strong><br>
-          ระบบได้บันทึกข้อมูล สร้างโฟลเดอร์ผลงาน และสร้าง PDF ใบสมัครเรียบร้อยแล้ว<br>
-          <a href="${finalResult.folderUrl}" target="_blank">เปิดโฟลเดอร์ผลงาน</a>
-          &nbsp; | &nbsp;
-          <a href="${finalResult.pdfUrl}" target="_blank">เปิดไฟล์ PDF ใบสมัคร</a>
-        `);
-
-        form.reset();
-
-      } catch (err) {
-        showError(err.message || err);
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-
-    function collectFormData() {
-      return {
-        studentId: getValue('studentId'),
-        fullName: getValue('fullName'),
-        level: getValue('level'),
-        room: getValue('room'),
-        studentNo: getValue('studentNo'),
-        house: getValue('house'),
-        phone: getValue('phone'),
-        email: getValue('email'),
-        workTitle: getValue('workTitle'),
-        concept: getValue('concept'),
-        inspiration: getValue('inspiration'),
-        colorMeaning: getValue('colorMeaning'),
-        identityMeaning: getValue('identityMeaning'),
-        acceptOriginal: document.getElementById('acceptOriginal').checked,
-        acceptNoAI: document.getElementById('acceptNoAI').checked,
-        acceptRules: document.getElementById('acceptRules').checked
-      };
-    }
-
-    function collectFiles() {
-      const files = [];
-
-      REQUIRED_FILES.forEach(item => {
-        const input = document.getElementById(item.id);
-        if (input.files && input.files[0]) {
-          files.push({
-            label: item.label,
-            file: input.files[0]
-          });
-        }
-      });
-
-      const extraInput = document.getElementById('extraFiles');
-      if (extraInput.files && extraInput.files.length > 0) {
-        Array.from(extraInput.files).forEach((file, index) => {
-          files.push({
-            label: `07_ไฟล์เสริม_${index + 1}`,
-            file: file
-          });
-        });
-      }
-
-      return files;
-    }
-
-    function validateFiles(files) {
-      const requiredCount = REQUIRED_FILES.length;
-
-      if (files.length < requiredCount) {
-        throw new Error('กรุณาอัปโหลดไฟล์ผลงานหลักให้ครบทั้ง 6 ภาพตัวอย่าง');
-      }
-
-      files.forEach(item => {
-        if (!ALLOWED_TYPES.includes(item.file.type)) {
-          throw new Error(`ไฟล์ ${item.file.name} ไม่ใช่ชนิดที่รองรับ กรุณาใช้ JPG, PNG หรือ PDF`);
-        }
-
-        if (item.file.size > MAX_FILE_SIZE) {
-          throw new Error(`ไฟล์ ${item.file.name} มีขนาดเกิน ${MAX_FILE_SIZE_MB} MB`);
-        }
-      });
-    }
-
-    function getValue(id) {
-      return document.getElementById(id).value.trim();
-    }
-
-    function fileToBase64(file) {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-
-        reader.onload = () => {
-          const result = String(reader.result || '');
-          const base64 = result.includes(',') ? result.split(',')[1] : result;
-          resolve(base64);
-        };
-
-        reader.onerror = () => {
-          reject(new Error(`อ่านไฟล์ ${file.name} ไม่สำเร็จ`));
-        };
-
-        reader.readAsDataURL(file);
-      });
-    }
-
-    function runGS(functionName, payload) {
-      return new Promise((resolve, reject) => {
-        google.script.run
-          .withSuccessHandler(resolve)
-          .withFailureHandler(error => {
-            reject(new Error(error.message || error));
-          })[functionName](payload);
-      });
-    }
-
-    function setProgress(percent, text) {
-      const safePercent = Math.max(0, Math.min(100, percent));
-      progressFill.style.width = safePercent + '%';
-      progressPercent.textContent = safePercent + '%';
-      progressText.textContent = text;
-    }
-
-    function showSuccess(html) {
-      statusBox.className = 'status-box status-success';
-      statusBox.innerHTML = html;
-    }
-
-    function showError(message) {
-      statusBox.className = 'status-box status-error';
-      statusBox.innerHTML = `
-        <strong>ไม่สามารถส่งผลงานได้</strong><br>
-        ${escapeHtml(message)}
-      `;
-      progressText.textContent = 'เกิดข้อผิดพลาด';
-    }
-
-    function resetStatus() {
-      statusBox.className = 'status-box';
-      statusBox.innerHTML = '';
-      setProgress(0, 'กำลังเตรียมข้อมูล...');
-    }
-
-    function validateGoogleScriptAvailable() {
-      if (typeof google === 'undefined' || !google.script || !google.script.run) {
-        throw new Error('หน้านี้ต้องเปิดผ่านลิงก์ Web App ของ Google Apps Script เท่านั้น');
-      }
-    }
-
-    function escapeHtml(text) {
-      return String(text)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
+    if (
+      FORM_WEB_APP_URL &&
+      FORM_WEB_APP_URL !== 'วางลิงก์ Google Apps Script Web App ตรงนี้'
+    ) {
+      applyFrame.src = FORM_WEB_APP_URL;
+      openFormLink.href = FORM_WEB_APP_URL;
+      frameFallback.style.display = 'block';
+    } else {
+      applyFrame.style.display = 'none';
+      frameFallback.style.display = 'block';
+      frameFallback.innerHTML = 'กรุณานำลิงก์ Google Apps Script Web App มาใส่ในตัวแปร FORM_WEB_APP_URL ก่อนใช้งาน';
     }
   </script>
 </body>
