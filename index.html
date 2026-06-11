@@ -143,6 +143,9 @@
       width: min(100%, 420px); height: auto; display: block;
       filter: drop-shadow(0 22px 24px rgba(11,95,58,.12));
     }
+    .shirt-download-wrap { position: relative; z-index: 2; display: flex; justify-content: center; margin-top: 14px; }
+    .shirt-download { font-size: 14px; padding: 11px 18px; }
+
     .shirt-caption {
       position: relative; z-index: 2; text-align: center; color: var(--muted);
       font-size: 13px; margin-top: -8px; line-height: 1.7;
@@ -341,6 +344,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#apply">ส่งผลงานเข้าประกวด</a>
             <a class="btn btn-secondary" href="#rules">อ่านกติกา</a>
+            <a class="btn btn-secondary" href="https://drive.google.com/uc?export=download&id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN" target="_blank" rel="noopener">ดาวน์โหลดแบบเสื้อสำหรับออกแบบ</a>
           </div>
           <div class="date-card">
             <div class="date-icon">📅</div>
@@ -354,12 +358,15 @@
         <div class="mockup-card">
           <div class="shirt-note">เสื้อคอปกสีขาวตัวอย่าง</div>
           <div class="shirt-wrap">
-            <img class="shirt-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Polo%20shirt%203D.jpg" alt="เสื้อคอปกสีขาวตัวอย่าง">
+            <img class="shirt-photo" src="https://drive.google.com/thumbnail?id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN&sz=w1200" alt="แบบเสื้อคอปกสำหรับออกแบบ">
           </div>
           <p class="shirt-caption">
-            ภาพเสื้อเป็นเพียงตัวอย่างรูปทรงเสื้อคอปกสีขาวล้วน<br>
-            สำหรับใช้เป็นต้นแบบให้นักเรียนออกแบบลวดลายและสีสันของผลงาน
+            ภาพเสื้อเป็นแบบเสื้อสำหรับให้นักเรียนใช้ประกอบการออกแบบ<br>
+            สามารถกดปุ่ม “ดาวน์โหลดแบบเสื้อสำหรับออกแบบ” เพื่อดาวน์โหลดไฟล์ต้นแบบ
           </p>
+          <div class="shirt-download-wrap">
+            <a class="btn btn-primary shirt-download" href="https://drive.google.com/uc?export=download&id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN" target="_blank" rel="noopener">ดาวน์โหลดแบบเสื้อสำหรับออกแบบ</a>
+          </div>
         </div>
       </div>
     </section>
@@ -479,6 +486,8 @@
         <div class="card iframe-card">
           <iframe id="applyFrame" class="apply-frame" title="แบบฟอร์มสมัครประกวดออกแบบเสื้อกีฬาสีภายใน" loading="lazy"></iframe>
           <div id="frameFallback" class="frame-fallback">
+            หากแบบฟอร์มไม่แสดงผล กรุณา
+            <a id="openFormLink" href="#" target="_blank" rel="noopener">เปิดแบบฟอร์มในหน้าใหม่</a>
           </div>
         </div>
       </div>
@@ -503,7 +512,6 @@
       <strong>งานคณะสี กลุ่มบริหารงานกิจการนักเรียน</strong>
       โรงเรียนเทพศิรินทร์ นนทบุรี<br>
       การประกวดออกแบบเสื้อกีฬาสีภายใน ประจำปีการศึกษา 2569
-      พัฒนาโดย นายกฤษณพล ทองอุ่น
     </div>
   </footer>
 
