@@ -4,308 +4,241 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>การประกวดออกแบบเสื้อกีฬาสีภายใน 2569</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      --green: #0b5f3a;
-      --green-2: #0f7a4b;
-      --yellow: #f1c84b;
-      --cream: #fff8e8;
-      --white: #ffffff;
-      --ink: #173626;
-      --muted: #6d7d72;
-      --line: rgba(11, 95, 58, 0.14);
-      --shadow: 0 18px 50px rgba(15, 85, 52, 0.13);
-      --radius: 24px;
+      --green:#0b5f3a; --green2:#0f7a4b; --green3:#154f39; --yellow:#f1c84b; --cream:#fffaf0;
+      --ink:#173626; --muted:#6d7d72; --line:rgba(11,95,58,.12); --surface:rgba(255,255,255,.86);
+      --shadow:0 18px 50px rgba(15,85,52,.12); --radius:26px; --maxw:1180px;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
     body {
-      margin: 0;
-      font-family: 'Prompt', 'Sarabun', sans-serif;
-      color: var(--ink);
+      margin:0; font-family:'Prompt','Sarabun',sans-serif; color:var(--ink); overflow-x:hidden;
       background:
-        radial-gradient(circle at 8% 5%, rgba(241, 200, 75, 0.28), transparent 26%),
-        radial-gradient(circle at 92% 10%, rgba(11, 95, 58, 0.18), transparent 30%),
-        linear-gradient(180deg, #fffdf5 0%, var(--cream) 55%, #ffffff 100%);
-      overflow-x: hidden;
+        radial-gradient(circle at 12% 8%, rgba(241,200,75,.34), transparent 22%),
+        radial-gradient(circle at 88% 12%, rgba(11,95,58,.18), transparent 26%),
+        radial-gradient(circle at 80% 60%, rgba(241,200,75,.18), transparent 22%),
+        linear-gradient(180deg, #fffdf8 0%, #fffaf0 45%, #ffffff 100%);
     }
-
-    a { color: inherit; text-decoration: none; }
-    img, svg, iframe { max-width: 100%; }
-    .container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
-
+    a { text-decoration:none; color:inherit; }
+    img, iframe { max-width:100%; }
+    .container { width:min(var(--maxw), calc(100% - 32px)); margin:0 auto; }
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 99;
-      background: rgba(255, 253, 245, 0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
+      position:sticky; top:0; z-index:100; backdrop-filter:blur(18px);
+      background:rgba(255,255,255,.72); border-bottom:1px solid rgba(11,95,58,.08);
     }
-
     .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:18px;
     }
-
-    .brand { display: flex; align-items: center; gap: 12px; min-width: 230px; }
+    .brand { display:flex; align-items:center; gap:12px; min-width:0; }
     .brand-logo {
-      width: 48px; height: 48px; object-fit: contain; border-radius: 50%;
-      background: #fff; padding: 4px; box-shadow: 0 8px 24px rgba(11, 95, 58, 0.12);
+      width:52px; height:52px; border-radius:50%; background:#fff; padding:5px; object-fit:contain;
+      box-shadow:0 10px 24px rgba(11,95,58,.11); flex:0 0 auto;
     }
-    .brand-title { line-height: 1.2; }
-    .brand-title strong { display: block; font-size: 15px; color: var(--green); }
-    .brand-title span { display: block; font-size: 12px; color: var(--muted); }
-
-    .menu { display: flex; align-items: center; gap: 18px; font-size: 14px; }
-    .menu a { opacity: 0.86; }
-    .menu a:hover { color: var(--green); opacity: 1; }
-
+    .brand-title strong { display:block; color:var(--green); font-size:16px; font-weight:800; line-height:1.2; }
+    .brand-title span { display:block; font-size:12px; color:var(--muted); }
+    .menu { display:flex; gap:18px; flex-wrap:wrap; justify-content:center; font-size:14px; }
+    .menu a { opacity:.86; transition:.2s ease; }
+    .menu a:hover { color:var(--green); opacity:1; transform:translateY(-1px); }
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      border: 0; border-radius: 999px; padding: 13px 22px; font-family: inherit;
-      font-weight: 700; cursor: pointer; transition: .2s ease; white-space: nowrap;
+      display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 22px;
+      border:0; border-radius:999px; font-family:inherit; font-weight:700; font-size:15px;
+      cursor:pointer; transition:.2s ease; white-space:nowrap;
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--green), var(--green-2));
-      color: #fff; box-shadow: 0 12px 26px rgba(11, 95, 58, .22);
+      color:#fff; background:linear-gradient(135deg, var(--green), var(--green2));
+      box-shadow:0 14px 28px rgba(11,95,58,.22);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(11,95,58,.26); }
-    .btn-secondary { background: #fff; color: var(--green); border: 1px solid var(--line); }
-    .mobile-menu-btn {
-      display: none; background: #fff; border: 1px solid var(--line); border-radius: 12px;
-      padding: 8px 10px; color: var(--green); font-weight: 800;
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 18px 34px rgba(11,95,58,.28); }
+    .btn-secondary {
+      color:var(--green); background:rgba(255,255,255,.92); border:1px solid rgba(11,95,58,.12);
+      box-shadow:0 10px 22px rgba(11,95,58,.07);
     }
+    .btn-secondary:hover { transform:translateY(-2px); background:#fff; }
+    .mobile-apply { display:none; background:#fff; color:var(--green); border:1px solid rgba(11,95,58,.12); font-weight:800; padding:9px 12px; border-radius:12px; }
 
-    .hero { position: relative; padding: 76px 0 46px; }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 42px; align-items: center; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1px solid rgba(11,95,58,.18);
-      background: rgba(255,255,255,.68);
-      color: var(--green); border-radius: 999px; padding: 8px 14px;
-      font-size: 14px; font-weight: 600;
+    .hero { padding:38px 0 44px; }
+    .hero-shell {
+      position:relative; overflow:hidden; border:1px solid rgba(11,95,58,.09);
+      background:linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,250,240,.92) 100%);
+      border-radius:34px; box-shadow:0 24px 70px rgba(11,95,58,.10); padding:34px; isolation:isolate;
     }
-    .hero h1 {
-      margin: 20px 0 10px; font-size: clamp(36px, 5.5vw, 68px);
-      line-height: 1.08; letter-spacing: -1.5px; color: var(--green);
+    .hero-shell::before {
+      content:""; position:absolute; width:360px; height:360px; right:-80px; top:-100px; border-radius:50%;
+      background:radial-gradient(circle, rgba(241,200,75,.32) 0%, rgba(241,200,75,.04) 65%, transparent 68%); z-index:-1;
     }
-    .hero h1 span { color: var(--ink); }
-    .subtitle { margin: 0; font-size: clamp(18px, 2.3vw, 28px); font-weight: 700; color: #986f00; }
-    .hero-desc { margin: 18px 0 24px; font-size: 16px; line-height: 1.85; color: var(--muted); max-width: 690px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .hero-shell::after {
+      content:""; position:absolute; width:300px; height:300px; left:-90px; bottom:-110px; border-radius:50%;
+      background:radial-gradient(circle, rgba(11,95,58,.10) 0%, rgba(11,95,58,.03) 65%, transparent 68%); z-index:-1;
+    }
+    .hero-grid { display:grid; grid-template-columns:1.04fr .96fr; gap:34px; align-items:center; }
+    .eyebrow-pill {
+      display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border-radius:999px; font-size:14px; font-weight:700;
+      color:var(--green); background:rgba(255,255,255,.86); border:1px solid rgba(11,95,58,.12); box-shadow:0 8px 18px rgba(11,95,58,.06);
+    }
+    .hero h1 { margin:16px 0 12px; font-size:clamp(38px,5vw,66px); line-height:1.08; letter-spacing:-1.25px; color:var(--green); }
+    .hero h1 span { color:#8b6400; }
+    .subtitle { margin:0; font-size:clamp(18px,2vw,25px); color:var(--ink); font-weight:700; }
+    .hero-desc { margin:16px 0 22px; color:var(--muted); line-height:1.85; font-size:16px; max-width:660px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:22px; }
+    .hero-badges { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .mini-card {
+      padding:16px; border-radius:20px; border:1px solid rgba(11,95,58,.10); background:rgba(255,255,255,.84);
+      box-shadow:0 12px 24px rgba(11,95,58,.06);
+    }
+    .mini-card strong { display:block; color:var(--green); font-size:14px; margin-bottom:6px; }
+    .mini-card span { color:var(--ink); font-weight:700; font-size:15px; line-height:1.55; }
 
-    .date-card {
-      margin-top: 26px; display: inline-flex; align-items: center; gap: 14px;
-      background: #fff; border: 1px solid var(--line); border-radius: 20px;
-      padding: 14px 18px; box-shadow: 0 12px 36px rgba(11,95,58,.09);
+    .visual-card {
+      position:relative; border-radius:30px; padding:18px; background:linear-gradient(155deg, rgba(255,255,255,.82), rgba(255,248,232,.92));
+      border:1px solid rgba(11,95,58,.12); box-shadow:0 24px 64px rgba(11,95,58,.11);
     }
-    .date-icon {
-      width: 42px; height: 42px; border-radius: 14px; background: rgba(241,200,75,.24);
-      display: grid; place-items: center; font-size: 22px;
+    .visual-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:14px; }
+    .visual-label {
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:var(--green); color:#fff; font-size:13px; font-weight:700;
+      box-shadow:0 10px 24px rgba(11,95,58,.18);
     }
-    .date-card strong { display: block; color: var(--green); font-size: 15px; }
-    .date-card span { display: block; color: var(--ink); font-size: 15px; font-weight: 700; }
+    .floating-tag {
+      padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.88); border:1px solid rgba(11,95,58,.10);
+      color:#8b6400; font-size:12px; font-weight:800;
+    }
+    .shirt-stage { padding:18px 10px 8px; display:grid; place-items:center; min-height:380px; }
+    .shirt-photo { width:min(100%, 430px); display:block; border-radius:24px; box-shadow:0 26px 36px rgba(11,95,58,.10); }
+    .visual-caption { margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.7; text-align:center; }
+    .download-card {
+      margin-top:16px; padding:16px; border-radius:22px; background:rgba(255,255,255,.88); border:1px solid rgba(11,95,58,.10);
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .download-card strong { display:block; color:var(--green); font-size:15px; margin-bottom:4px; }
+    .download-card span { color:var(--muted); font-size:13px; line-height:1.6; }
 
-    .mockup-card {
-      position: relative;
-      background: linear-gradient(145deg, rgba(255,255,255,.85), rgba(255,248,232,.88));
-      border: 1px solid rgba(11,95,58,.13); border-radius: 34px;
-      padding: 30px; box-shadow: var(--shadow); overflow: hidden;
+    .section { padding:30px 0; }
+    .section-title { text-align:center; margin-bottom:22px; }
+    .section-title .eyebrow { color:#9a7200; font-size:13px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+    .section-title h2 { margin:8px 0 10px; font-size:clamp(28px,3.6vw,44px); color:var(--green); line-height:1.18; }
+    .section-title p { margin:0 auto; max-width:760px; color:var(--muted); line-height:1.8; font-size:15px; }
+    .glass { background:var(--surface); backdrop-filter:blur(10px); border:1px solid rgba(11,95,58,.10); box-shadow:var(--shadow); border-radius:var(--radius); }
+    .about-card { padding:28px; line-height:1.95; color:#43554b; position:relative; overflow:hidden; }
+    .about-card::after {
+      content:""; position:absolute; width:180px; height:180px; right:-40px; bottom:-50px; border-radius:50%;
+      background:radial-gradient(circle, rgba(241,200,75,.20) 0%, transparent 68%);
     }
-    .mockup-card::before {
-      content: ''; position: absolute; inset: auto -80px -80px auto; width: 230px; height: 230px;
-      border-radius: 50%; background: rgba(241,200,75,.36);
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .feature-card { padding:24px; position:relative; overflow:hidden; }
+    .feature-card::before {
+      content:""; position:absolute; top:-26px; right:-26px; width:92px; height:92px; border-radius:50%;
+      background:radial-gradient(circle, rgba(241,200,75,.22) 0%, transparent 70%);
     }
-    .mockup-card::after {
-      content: ''; position: absolute; inset: -70px auto auto -70px; width: 200px; height: 200px;
-      border-radius: 50%; background: rgba(11,95,58,.09);
-    }
-    .shirt-note {
-      position: absolute; right: 22px; top: 20px; background: var(--green); color: #fff;
-      padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700;
-      box-shadow: 0 10px 24px rgba(11,95,58,.18); z-index: 3;
-    }
-    .shirt-wrap {
-      position: relative; z-index: 2; display: grid; place-items: center;
-      min-height: 430px; padding: 8px 0;
-    }
-    .shirt-photo {
-      width: min(100%, 420px); height: auto; display: block;
-      filter: drop-shadow(0 22px 24px rgba(11,95,58,.12));
-    }
-    .shirt-download-wrap { position: relative; z-index: 2; display: flex; justify-content: center; margin-top: 14px; }
-    .shirt-download { font-size: 14px; padding: 11px 18px; }
-
-    .shirt-caption {
-      position: relative; z-index: 2; text-align: center; color: var(--muted);
-      font-size: 13px; margin-top: -8px; line-height: 1.7;
-    }
-
-    .section { padding: 54px 0; }
-    .section-title { text-align: center; margin-bottom: 28px; }
-    .section-title .eyebrow {
-      color: #9a7200; font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-    }
-    .section-title h2 {
-      margin: 8px 0 10px; font-size: clamp(28px, 3.6vw, 44px);
-      color: var(--green); line-height: 1.2;
-    }
-    .section-title p { margin: 0 auto; max-width: 760px; color: var(--muted); line-height: 1.85; }
-
-    .card {
-      background: rgba(255,255,255,.82); border: 1px solid var(--line);
-      border-radius: var(--radius); box-shadow: 0 14px 42px rgba(11,95,58,.08);
-    }
-    .about-card { padding: 28px; line-height: 1.95; color: #415349; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-    .feature-card { padding: 24px; }
     .feature-icon {
-      width: 48px; height: 48px; border-radius: 16px; background: rgba(241,200,75,.25);
-      display: grid; place-items: center; font-size: 24px; margin-bottom: 12px;
+      width:54px; height:54px; border-radius:18px; display:grid; place-items:center; font-size:25px; margin-bottom:12px;
+      background:linear-gradient(135deg, rgba(241,200,75,.28), rgba(241,200,75,.12)); color:var(--green);
     }
-    .feature-card h3 { margin: 0 0 8px; color: var(--green); }
-    .feature-card p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .feature-card h3 { margin:0 0 8px; color:var(--green); font-size:19px; }
+    .feature-card p { margin:0; color:var(--muted); line-height:1.75; font-size:15px; }
 
-    .theme-box {
-      position: relative; overflow: hidden; padding: 42px;
-      background: linear-gradient(135deg, rgba(11,95,58,.95), rgba(11,95,58,.82));
-      border-radius: 34px; color: #fff; box-shadow: var(--shadow);
+    .theme-panel {
+      position:relative; overflow:hidden; border-radius:30px; padding:34px; color:#fff;
+      background:linear-gradient(135deg, rgba(11,95,58,.98), rgba(11,95,58,.88)); box-shadow:0 22px 56px rgba(11,95,58,.18);
     }
-    .theme-box h2 { margin: 0; font-size: clamp(34px, 5vw, 62px); line-height: 1.1; }
-    .theme-box p { max-width: 760px; line-height: 1.9; opacity: .9; margin-bottom: 0; }
+    .theme-panel::after {
+      content:""; position:absolute; width:240px; height:240px; right:-70px; top:-60px; border-radius:50%;
+      background:radial-gradient(circle, rgba(241,200,75,.25) 0%, transparent 66%);
+    }
+    .theme-panel small { display:inline-block; color:#f6d66b; font-weight:800; letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px; }
+    .theme-panel h2 { margin:0; font-size:clamp(34px,5vw,58px); line-height:1.1; }
+    .theme-panel p { position:relative; margin:16px 0 0; max-width:760px; line-height:1.95; opacity:.93; z-index:1; }
 
-    .file-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .file-list { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
     .file-item {
-      display: flex; align-items: center; gap: 12px; padding: 16px;
-      background: #fff; border: 1px solid var(--line); border-radius: 18px;
+      display:flex; align-items:center; gap:12px; padding:16px 18px; border-radius:18px; background:rgba(255,255,255,.92);
+      border:1px solid rgba(11,95,58,.10); box-shadow:0 12px 26px rgba(11,95,58,.05); font-weight:600;
     }
     .dot {
-      width: 16px; height: 16px; border-radius: 50%; flex: 0 0 auto;
-      border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+      width:16px; height:16px; border-radius:50%; flex:0 0 auto; border:2px solid rgba(255,255,255,.95); box-shadow:0 0 0 1px rgba(0,0,0,.08);
     }
-    .purple { background:#8e5ac7; } .blue { background:#2468d8; } .orange { background:#ef8d2f; }
-    .pink { background:#f47ab6; } .red { background:#d63a32; }
-    .green-yellow { background: linear-gradient(135deg, var(--green) 0 50%, var(--yellow) 50% 100%); }
+    .purple { background:#8e5ac7; } .blue { background:#2468d8; } .orange { background:#ef8d2f; } .pink { background:#f47ab6; } .red { background:#d63a32; }
+    .green-yellow { background:linear-gradient(135deg, var(--green) 0 50%, var(--yellow) 50% 100%); }
 
-    .rule-list { display: grid; gap: 12px; }
-    details { background:#fff; border:1px solid var(--line); border-radius:18px; padding:16px 18px; }
-    summary { cursor:pointer; color:var(--green); font-weight:700; }
-    details p { margin:10px 0 0; line-height:1.8; color:var(--muted); }
+    .rule-list { display:grid; gap:12px; }
+    details { border-radius:18px; padding:16px 18px; background:rgba(255,255,255,.92); border:1px solid rgba(11,95,58,.10); box-shadow:0 10px 22px rgba(11,95,58,.04); }
+    summary { cursor:pointer; font-weight:700; color:var(--green); line-height:1.6; }
+    details p { margin:10px 0 0; color:var(--muted); line-height:1.85; font-size:15px; }
 
-    .prize-grid { display:grid; grid-template-columns: 1.2fr 1fr 1fr; gap:18px; }
+    .prize-grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:18px; }
     .prize { padding:26px; position:relative; overflow:hidden; }
-    .prize.first { background: linear-gradient(135deg, #fff, #fff4c9); border-color: rgba(241,200,75,.5); }
+    .prize::before {
+      content:""; position:absolute; width:130px; height:130px; right:-35px; top:-34px; border-radius:50%;
+      background:radial-gradient(circle, rgba(241,200,75,.24) 0%, transparent 70%);
+    }
+    .prize.first { background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,244,201,.95)); border-color:rgba(241,200,75,.40); }
     .prize h3 { margin:0 0 10px; color:var(--green); font-size:22px; }
-    .prize .money { font-size:34px; font-weight:800; color:#9a7200; }
-    .prize p { margin:8px 0 0; color:var(--muted); }
+    .prize .money { font-size:36px; font-weight:800; color:#9a7200; }
+    .prize p { margin:10px 0 0; color:var(--muted); line-height:1.7; }
+    .note-card { margin-top:16px; padding:18px 20px; text-align:center; color:var(--muted); line-height:1.8; }
 
-    .steps { display:grid; grid-template-columns: repeat(4,1fr); gap:16px; }
-    .step { padding:22px; background:#fff; border:1px solid var(--line); border-radius:22px; }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .step { padding:22px; border-radius:22px; background:rgba(255,255,255,.92); border:1px solid rgba(11,95,58,.10); box-shadow:0 10px 24px rgba(11,95,58,.05); }
     .step-number {
-      width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
-      background:var(--green); color:#fff; font-weight:800; margin-bottom:12px;
+      width:40px; height:40px; display:grid; place-items:center; border-radius:50%; background:linear-gradient(135deg, var(--green), var(--green2));
+      color:#fff; font-weight:800; margin-bottom:12px; box-shadow:0 12px 22px rgba(11,95,58,.20);
     }
+    .step strong { display:block; color:var(--green); margin-bottom:6px; font-size:16px; }
+    .step p { margin:0; color:var(--muted); line-height:1.75; font-size:14px; }
 
-    .iframe-card { padding:18px; background: rgba(255,255,255,.86); }
-    .apply-frame {
-      width: 100%; min-height: 1700px; height: 2200px;
-      border: 0; border-radius: 22px; background: transparent; display:block;
-    }
-    .frame-fallback {
-      display:none; margin-top:14px; text-align:center; color:var(--muted); line-height:1.7;
-    }
-    .frame-fallback a { color:var(--green); font-weight:800; text-decoration: underline; }
+    .apply-shell { padding:18px; }
+    .apply-head { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:4px 4px 14px; flex-wrap:wrap; }
+    .apply-head h3 { margin:0; color:var(--green); font-size:20px; }
+    .apply-head p { margin:4px 0 0; color:var(--muted); font-size:14px; }
+    .apply-frame { width:100%; min-height:1700px; height:2200px; border:0; border-radius:22px; background:transparent; display:block; }
+    .frame-fallback { display:none; margin-top:14px; text-align:center; color:var(--muted); line-height:1.7; }
+    .frame-fallback a { color:var(--green); font-weight:800; text-decoration:underline; }
 
-    .footer {
-      padding:34px 0; background:var(--green); color:rgba(255,255,255,.88);
-      text-align:center; margin-top:40px; line-height:1.8;
-    }
+    .footer { margin-top:40px; background:linear-gradient(135deg, var(--green3), var(--green)); color:rgba(255,255,255,.88); padding:36px 0; text-align:center; }
     .footer strong { display:block; color:#fff; font-size:18px; margin-bottom:4px; }
 
-    @media (max-width: 1200px) {
-      .container { width: min(100% - 28px, 1040px); }
-      .hero-grid { gap: 28px; }
+    @media (max-width:1100px) {
+      .hero-grid { grid-template-columns:1fr; }
+      .visual-card { max-width:760px; margin:0 auto; }
+      .hero-badges, .grid-3, .prize-grid, .steps, .file-list { grid-template-columns:repeat(2,1fr); }
     }
-
-    @media (max-width: 1024px) {
-      .hero { padding: 58px 0 36px; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: clamp(38px, 7vw, 62px); }
-      .mockup-card { max-width: 680px; margin: 0 auto; }
-      .shirt-wrap { min-height: 360px; }
-      .shirt-photo { width: min(86%, 360px); }
-      .grid-3, .prize-grid, .steps, .file-list { grid-template-columns: repeat(2, 1fr); }
-      .apply-frame { min-height: 2100px; }
-    }
-
-    @media (max-width: 820px) {
-      .nav { height:auto; min-height:68px; padding:10px 0; }
-      .brand { min-width:0; }
-      .brand-title strong { font-size:14px; }
-      .brand-title span { font-size:11px; }
-      .menu, .nav > .btn-primary { display:none; }
-      .mobile-menu-btn { display:inline-flex; }
-      .hero { padding-top:38px; }
-      .hero h1 { letter-spacing:-.8px; }
+    @media (max-width:860px) {
+      .menu, .hidden-mobile { display:none; }
+      .mobile-apply { display:inline-flex; }
+      .nav { min-height:70px; padding:10px 0; }
+      .hero-shell { padding:22px; border-radius:28px; }
+      .hero { padding-top:22px; }
       .hero-actions { display:grid; grid-template-columns:1fr; }
-      .hero-actions .btn, .date-card { width:100%; }
-      .date-card { align-items:flex-start; }
-      .grid-3, .prize-grid, .steps, .file-list { grid-template-columns:1fr; }
-      .section { padding:38px 0; }
-      .section-title { margin-bottom:20px; }
-      .about-card, .feature-card, .prize, .step { padding:20px; }
-      .theme-box { padding:28px; border-radius:26px; }
-      .theme-box h2 { font-size: clamp(32px, 9vw, 48px); }
-      .iframe-card { padding:10px; border-radius:20px; }
-      .apply-frame { min-height:2450px; border-radius:16px; }
+      .hero-actions .btn { width:100%; }
+      .hero-badges, .grid-3, .prize-grid, .steps, .file-list { grid-template-columns:1fr; }
+      .download-card, .apply-head { flex-direction:column; align-items:stretch; }
+      .apply-frame { min-height:2480px; }
     }
-
-    @media (max-width: 560px) {
-      .container { width: min(100% - 22px, 100%); }
-      .nav { gap:8px; }
-      .brand-logo { width:42px; height:42px; }
+    @media (max-width:560px) {
+      .container { width:min(100% - 20px, 100%); }
+      .brand-logo { width:46px; height:46px; }
+      .brand-title strong { font-size:14px; }
       .brand-title span { display:none; }
-      .hero { padding-top:30px; }
-      .badge { font-size:12px; padding:7px 11px; }
-      .hero h1 { margin-top:16px; font-size:clamp(34px, 11vw, 48px); line-height:1.12; }
+      .hero h1 { font-size:clamp(34px,10vw,44px); }
       .subtitle { font-size:17px; line-height:1.45; }
-      .hero-desc { font-size:15px; line-height:1.75; }
-      .btn { padding:12px 18px; font-size:14px; }
-      .mockup-card { padding:16px; border-radius:24px; }
-      .shirt-note { top:14px; right:14px; font-size:12px; }
-      .shirt-wrap { min-height:285px; }
-      .shirt-photo { width:min(92%, 285px); }
-      .shirt-caption { font-size:12px; margin-top:0; }
-      .section-title h2 { font-size:clamp(26px, 8vw, 36px); }
-      .section-title p { font-size:14px; line-height:1.75; }
-      .file-item { padding:14px; font-size:14px; }
-      details { padding:14px; }
-      summary { font-size:15px; }
-      details p { font-size:14px; }
-      .prize .money { font-size:28px; }
-      .apply-frame { min-height:2850px; }
-      .footer { font-size:13px; }
+      .hero-desc, .section-title p, .theme-panel p, details p { font-size:14px; }
+      .hero-shell, .theme-panel { padding:18px; }
+      .visual-card, .about-card, .feature-card, .prize, .step, .apply-shell { padding:16px; }
+      .shirt-stage { min-height:280px; }
+      .shirt-photo { width:min(100%, 280px); }
+      .mini-card { padding:14px; }
+      .prize .money { font-size:30px; }
+      .apply-frame { min-height:2900px; }
+      .footer { font-size:13px; line-height:1.8; }
     }
-
-    @media (max-width: 390px) {
+    @media (max-width:390px) {
       .hero h1 { font-size:32px; }
-      .brand-title strong { font-size:13px; }
-      .shirt-wrap { min-height:260px; }
-      .apply-frame { min-height:3050px; }
+      .apply-frame { min-height:3120px; }
     }
   </style>
 </head>
-
 <body>
   <header class="topbar">
     <div class="container nav">
@@ -316,56 +249,66 @@
           <span>Sport Shirt Design Contest 2569</span>
         </div>
       </a>
-
       <nav class="menu">
         <a href="#about">รายละเอียด</a>
         <a href="#theme">ธีม</a>
+        <a href="#files">ไฟล์ที่ส่ง</a>
         <a href="#rules">กติกา</a>
+        <a href="#awards">รางวัล</a>
         <a href="#apply">สมัคร</a>
         <a href="#faq">FAQ</a>
       </nav>
-
-      <a class="btn btn-primary" href="#apply">สมัครส่งผลงาน</a>
-      <button class="mobile-menu-btn" onclick="location.href='#apply'">สมัคร</button>
+      <a class="btn btn-primary hidden-mobile" href="#apply">สมัครส่งผลงาน</a>
+      <button class="mobile-apply" onclick="location.href='#apply'">สมัคร</button>
     </div>
   </header>
 
   <main id="home">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="badge">🏆 เปิดรับผลงาน 12–22 มิถุนายน 2569</div>
-          <h1>การประกวดออกแบบ<br><span>เสื้อกีฬาสีภายใน</span></h1>
-          <p class="subtitle">โรงเรียนเทพศิรินทร์ นนทบุรี ประจำปีการศึกษา 2569</p>
-          <p class="hero-desc">
-            ร่วมออกแบบเสื้อกีฬาสีภายในรูปแบบใหม่ ที่มีความทันสมัย สวยงาม เหมาะสมต่อการใช้งาน
-            และสื่อสารอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี ได้อย่างสร้างสรรค์
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#apply">ส่งผลงานเข้าประกวด</a>
-            <a class="btn btn-secondary" href="#rules">อ่านกติกา</a>
-            <a class="btn btn-secondary" href="https://drive.google.com/uc?export=download&id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN" target="_blank" rel="noopener">ดาวน์โหลดแบบเสื้อสำหรับออกแบบ</a>
-          </div>
-          <div class="date-card">
-            <div class="date-icon">📅</div>
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-grid">
             <div>
-              <strong>ระยะเวลาการส่งผลงาน</strong>
-              <span>12 มิถุนายน – 22 มิถุนายน 2569</span>
+              <div class="eyebrow-pill">🏆 เปิดรับผลงาน 12 – 22 มิถุนายน 2569</div>
+              <h1>การประกวดออกแบบ<br><span>เสื้อกีฬาสีภายใน</span></h1>
+              <p class="subtitle">โรงเรียนเทพศิรินทร์ นนทบุรี ประจำปีการศึกษา 2569</p>
+              <p class="hero-desc">
+                เปิดพื้นที่ให้นักเรียนได้แสดงความคิดสร้างสรรค์ผ่านการออกแบบเสื้อกีฬาสีภายในรูปแบบใหม่
+                ที่มีความทันสมัย สวยงาม ใช้งานได้จริง และสะท้อนอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี
+                ภายใต้ธีมแห่งความรัก ความผูกพัน และความภาคภูมิใจ
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#apply">ส่งผลงานเข้าประกวด</a>
+                <a class="btn btn-secondary" href="https://drive.google.com/uc?export=download&id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN" target="_blank" rel="noopener">ดาวน์โหลดแบบเสื้อสำหรับออกแบบ</a>
+                <a class="btn btn-secondary" href="#rules">อ่านกติกา</a>
+              </div>
+              <div class="hero-badges">
+                <div class="mini-card"><strong>คุณสมบัติ</strong><span>นักเรียน ม.1–ม.6 ปีการศึกษา 2569</span></div>
+                <div class="mini-card"><strong>จำนวนไฟล์</strong><span>ส่งแบบเสื้อรวม 6 ภาพตัวอย่าง</span></div>
+                <div class="mini-card"><strong>รางวัลสูงสุด</strong><span>เกียรติบัตร + เงินรางวัล 1,000 บาท</span></div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="mockup-card">
-          <div class="shirt-note">เสื้อคอปกสีขาวตัวอย่าง</div>
-          <div class="shirt-wrap">
-            <img class="shirt-photo" src="https://drive.google.com/thumbnail?id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN&sz=w1200" alt="แบบเสื้อคอปกสำหรับออกแบบ">
-          </div>
-          <p class="shirt-caption">
-            ภาพเสื้อเป็นแบบเสื้อสำหรับให้นักเรียนใช้ประกอบการออกแบบ<br>
-            สามารถกดปุ่ม “ดาวน์โหลดแบบเสื้อสำหรับออกแบบ” เพื่อดาวน์โหลดไฟล์ต้นแบบ
-          </p>
-          <div class="shirt-download-wrap">
-            <a class="btn btn-primary shirt-download" href="https://drive.google.com/uc?export=download&id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN" target="_blank" rel="noopener">ดาวน์โหลดแบบเสื้อสำหรับออกแบบ</a>
+            <div class="visual-card">
+              <div class="visual-top">
+                <div class="visual-label">เสื้อคอปกต้นแบบสำหรับออกแบบ</div>
+                <div class="floating-tag">A Legend of Love</div>
+              </div>
+              <div class="shirt-stage">
+                <img class="shirt-photo" src="https://drive.google.com/thumbnail?id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN&sz=w1400" alt="แบบเสื้อสำหรับออกแบบ">
+              </div>
+              <p class="visual-caption">
+                ใช้แบบเสื้อชุดนี้เป็นต้นแบบสำหรับการออกแบบผลงานของนักเรียน
+                โดยสามารถดาวน์โหลดไฟล์ต้นแบบได้จากปุ่มด้านล่าง
+              </p>
+              <div class="download-card">
+                <div>
+                  <strong>ดาวน์โหลดไฟล์ต้นแบบได้ทันที</strong>
+                  <span>เหมาะสำหรับนำไปออกแบบต่อในโปรแกรมต่าง ๆ ก่อนอัปโหลดส่งผลงาน</span>
+                </div>
+                <a class="btn btn-primary" href="https://drive.google.com/uc?export=download&id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN" target="_blank" rel="noopener">ดาวน์โหลดแบบเสื้อสำหรับออกแบบ</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -378,9 +321,10 @@
           <h2>ที่มาและวัตถุประสงค์</h2>
           <p>การประกวดออกแบบเสื้อกีฬาสีภายใน ประจำปีการศึกษา 2569</p>
         </div>
-        <div class="card about-card">
-          งานคณะสี กลุ่มบริหารงานกิจการนักเรียน โรงเรียนเทพศิรินทร์ นนทบุรี ได้จัดการประกวดออกแบบเสื้อกีฬาสีภายใน
-          ประจำปีการศึกษา 2569 เพื่อเปิดโอกาสให้นักเรียนได้มีส่วนร่วมในการออกแบบเสื้อกีฬาสีภายในรูปแบบใหม่
+        <div class="glass about-card">
+          งานคณะสี กลุ่มบริหารงานกิจการนักเรียน โรงเรียนเทพศิรินทร์ นนทบุรี
+          ได้จัดการประกวดออกแบบเสื้อกีฬาสีภายใน ประจำปีการศึกษา 2569
+          เพื่อเปิดโอกาสให้นักเรียนได้มีส่วนร่วมในการออกแบบเสื้อกีฬาสีภายในรูปแบบใหม่
           สำหรับใช้สวมใส่ในการจัดการเรียนการสอนและการเข้าร่วมกิจกรรมกีฬาสีภายในโรงเรียน
           โดยมุ่งเน้นให้เสื้อมีความทันสมัย สวยงาม เหมาะสมต่อการใช้งาน
           และสามารถสื่อสารอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี ได้อย่างสร้างสรรค์
@@ -395,22 +339,22 @@
           <h2>คุณสมบัติผู้ส่งผลงาน</h2>
         </div>
         <div class="grid-3">
-          <div class="card feature-card"><div class="feature-icon">👤</div><h3>สถานะผู้สมัคร</h3><p>เป็นนักเรียนโรงเรียนเทพศิรินทร์ นนทบุรี</p></div>
-          <div class="card feature-card"><div class="feature-icon">🎓</div><h3>ระดับชั้น</h3><p>มัธยมศึกษาปีที่ 1–6</p></div>
-          <div class="card feature-card"><div class="feature-icon">📌</div><h3>ปีการศึกษา</h3><p>ประจำปีการศึกษา 2569</p></div>
+          <div class="glass feature-card"><div class="feature-icon">👤</div><h3>สถานะผู้สมัคร</h3><p>เป็นนักเรียนโรงเรียนเทพศิรินทร์ นนทบุรี</p></div>
+          <div class="glass feature-card"><div class="feature-icon">🎓</div><h3>ระดับชั้น</h3><p>มัธยมศึกษาปีที่ 1–6 ประจำปีการศึกษา 2569</p></div>
+          <div class="glass feature-card"><div class="feature-icon">🧾</div><h3>จำนวนผลงาน</h3><p>ผู้เข้าประกวด 1 คน สามารถส่งได้เพียง 1 ผลงานเท่านั้น</p></div>
         </div>
       </div>
     </section>
 
     <section id="theme" class="section">
       <div class="container">
-        <div class="theme-box">
-          <p style="font-weight:700; color:#f6d66b; margin-top:0;">Theme</p>
+        <div class="theme-panel">
+          <small>Theme</small>
           <h2>ตำนานแห่งรัก :<br>A Legend of Love</h2>
           <p>
-            ออกแบบเสื้อกีฬาสีภายในที่ถ่ายทอดเรื่องราวของความรัก ความผูกพัน ความสามัคคี
-            และความภาคภูมิใจในอัตลักษณ์ของโรงเรียนเทพศิรินทร์ นนทบุรี
-            ผ่านสี ลวดลาย และองค์ประกอบบนเสื้ออย่างสร้างสรรค์
+            การออกแบบควรถ่ายทอดเรื่องราวของความรัก ความผูกพัน ความสามัคคี
+            และความภาคภูมิใจในอัตลักษณ์ของโรงเรียน ผ่านสี ลวดลาย และองค์ประกอบบนเสื้อ
+            ให้มีความสร้างสรรค์ร่วมสมัยและพร้อมใช้งานจริง
           </p>
         </div>
       </div>
@@ -421,7 +365,7 @@
         <div class="section-title">
           <div class="eyebrow">Submission Files</div>
           <h2>รายละเอียดไฟล์ที่ต้องส่ง</h2>
-          <p>ผู้เข้าประกวดต้องจัดทำภาพตัวอย่างเสื้อให้ครบทั้ง 5 คณะสี และภาพตัวอย่างเสื้อสีเขียว–เหลือง รวม 6 ภาพตัวอย่าง</p>
+          <p>ผู้เข้าประกวดต้องจัดทำภาพตัวอย่างเสื้อให้ครบทั้ง 5 คณะสี และภาพตัวอย่างเสื้อสีเขียว–เหลือง รวมทั้งสิ้น 6 ภาพตัวอย่าง</p>
         </div>
         <div class="file-list">
           <div class="file-item"><span class="dot purple"></span>คณะแม้นนฤมิตร สีม่วง</div>
@@ -445,33 +389,38 @@
           <details><summary>2. รูปแบบเสื้อ</summary><p>ผลงานต้องเหมาะสมต่อการสวมใส่ได้ทุกเพศ หรือ UNISEX และเหมาะสมสำหรับการเรียนและการเข้าร่วมกิจกรรมกีฬาสีภายในโรงเรียน</p></details>
           <details><summary>3. สัญลักษณ์ที่ต้องมี</summary><p>ต้องปรากฏตราสัญลักษณ์ของโรงเรียน และตราสัญลักษณ์ To Be Number One บริเวณแขนเสื้อด้านซ้าย</p></details>
           <details><summary>4. จำนวนผลงานต่อคน</summary><p>ผู้เข้าประกวด 1 คน สามารถส่งผลงานเข้าร่วมประกวดได้เพียง 1 ผลงานเท่านั้น</p></details>
-          <details><summary>5. ลิขสิทธิ์ผลงาน</summary><p>ผลงานต้องออกแบบขึ้นใหม่ ไม่เคยนำเสนอที่ใดมาก่อน ไม่เคยได้รับรางวัล และต้องไม่ละเมิดลิขสิทธิ์หรือทรัพย์สินทางปัญญาของผู้อื่นโดยเด็ดขาด</p></details>
-          <details><summary>6. เครื่องมือออกแบบ</summary><p>สามารถออกแบบผลงานโดยใช้โปรแกรมสำเร็จรูปหรือเครื่องมือดิจิทัลในการออกแบบได้</p></details>
-          <details><summary>7. ข้อห้ามเรื่อง AI</summary><p>ห้ามใช้ปัญญาประดิษฐ์ หรือ AI ในการสร้าง ออกแบบ ดัดแปลง หรือปรับแต่งผลงาน ไม่ว่าทั้งหมดหรือบางส่วน หากตรวจพบ คณะกรรมการขอสงวนสิทธิ์ในการตัดสิทธิ์ผลงานดังกล่าวโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</p></details>
+          <details><summary>5. ลิขสิทธิ์และความเป็นต้นฉบับ</summary><p>ผลงานต้องออกแบบขึ้นใหม่ ไม่เคยนำเสนอที่ใดมาก่อน ไม่เคยได้รับรางวัล และต้องไม่ละเมิดลิขสิทธิ์หรือทรัพย์สินทางปัญญาของผู้อื่นโดยเด็ดขาด</p></details>
+          <details><summary>6. เครื่องมือที่ใช้ในการออกแบบ</summary><p>สามารถใช้โปรแกรมสำเร็จรูปหรือเครื่องมือดิจิทัลในการออกแบบได้ แต่ห้ามใช้ AI ในการสร้าง ออกแบบ ดัดแปลง หรือปรับแต่งผลงาน ไม่ว่าทั้งหมดหรือบางส่วน</p></details>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="awards" class="section">
       <div class="container">
-        <div class="section-title"><div class="eyebrow">Awards</div><h2>รางวัลการประกวด</h2></div>
+        <div class="section-title">
+          <div class="eyebrow">Awards</div>
+          <h2>รางวัลการประกวด</h2>
+        </div>
         <div class="prize-grid">
-          <div class="card prize first"><h3>รางวัลชนะเลิศ</h3><div class="money">1,000 บาท</div><p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p></div>
-          <div class="card prize"><h3>รองชนะเลิศอันดับที่ 1</h3><div class="money">700 บาท</div><p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p></div>
-          <div class="card prize"><h3>รองชนะเลิศอันดับที่ 2</h3><div class="money">500 บาท</div><p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p></div>
+          <div class="glass prize first"><h3>รางวัลชนะเลิศ</h3><div class="money">1,000 บาท</div><p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p></div>
+          <div class="glass prize"><h3>รองชนะเลิศอันดับที่ 1</h3><div class="money">700 บาท</div><p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p></div>
+          <div class="glass prize"><h3>รองชนะเลิศอันดับที่ 2</h3><div class="money">500 บาท</div><p>ได้รับเกียรติบัตร พร้อมเงินรางวัล</p></div>
         </div>
-        <div class="card about-card" style="margin-top:18px; text-align:center;">ผู้ส่งผลงานเข้าประกวดทุกคน ได้รับเกียรติบัตรการเข้าร่วมประกวด</div>
+        <div class="glass note-card">ผู้ส่งผลงานเข้าประกวดทุกคน ได้รับเกียรติบัตรการเข้าร่วมประกวด</div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-title"><div class="eyebrow">Steps</div><h2>ขั้นตอนการสมัคร</h2></div>
+        <div class="section-title">
+          <div class="eyebrow">Steps</div>
+          <h2>ขั้นตอนการสมัคร</h2>
+        </div>
         <div class="steps">
-          <div class="step"><div class="step-number">1</div>อ่านรายละเอียด กติกา และเงื่อนไข</div>
-          <div class="step"><div class="step-number">2</div>ออกแบบเสื้อให้ครบทั้ง 6 ภาพตัวอย่าง</div>
-          <div class="step"><div class="step-number">3</div>เตรียมไฟล์ JPG, PNG หรือ PDF</div>
-          <div class="step"><div class="step-number">4</div>กรอกข้อมูลและส่งผลงานในหน้าเว็บ</div>
+          <div class="step"><div class="step-number">1</div><strong>อ่านรายละเอียด</strong><p>ศึกษาธีม กติกา เงื่อนไข และไฟล์ที่ต้องจัดเตรียมให้ครบถ้วน</p></div>
+          <div class="step"><div class="step-number">2</div><strong>ออกแบบผลงาน</strong><p>ออกแบบเสื้อให้ครบทั้ง 6 ภาพตัวอย่าง ตามโจทย์และอัตลักษณ์ของโรงเรียน</p></div>
+          <div class="step"><div class="step-number">3</div><strong>เตรียมไฟล์</strong><p>บันทึกไฟล์เป็น JPG, PNG หรือ PDF โดยแต่ละไฟล์ขนาดไม่เกิน 10 MB</p></div>
+          <div class="step"><div class="step-number">4</div><strong>กรอกใบสมัคร</strong><p>กรอกข้อมูลและอัปโหลดผลงานผ่านแบบฟอร์มในหน้าเว็บด้านล่าง</p></div>
         </div>
       </div>
     </section>
@@ -481,11 +430,20 @@
         <div class="section-title">
           <div class="eyebrow">Apply Now</div>
           <h2>สมัครส่งผลงานเข้าประกวด</h2>
-          <p>กรอกข้อมูลและอัปโหลดผลงานผ่านแบบฟอร์มด้านล่าง</p>
+          <p>กรอกข้อมูลและอัปโหลดผลงานผ่านแบบฟอร์มด้านล่างได้ทันที</p>
         </div>
-        <div class="card iframe-card">
+        <div class="glass apply-shell">
+          <div class="apply-head">
+            <div>
+              <h3>แบบฟอร์มสมัครออนไลน์</h3>
+              <p>เมื่อกรอกครบและส่งสำเร็จ ระบบจะบันทึกข้อมูล อัปโหลดไฟล์ และสร้างเอกสารให้อัตโนมัติ</p>
+            </div>
+            <a class="btn btn-secondary" href="https://drive.google.com/uc?export=download&id=1BgpT0d3pfWuqY_e7-wyZ7m2BQGE35lLN" target="_blank" rel="noopener">ดาวน์โหลดแบบเสื้อสำหรับออกแบบ</a>
+          </div>
           <iframe id="applyFrame" class="apply-frame" title="แบบฟอร์มสมัครประกวดออกแบบเสื้อกีฬาสีภายใน" loading="lazy"></iframe>
           <div id="frameFallback" class="frame-fallback">
+            หากแบบฟอร์มไม่แสดงผล กรุณา
+            <a id="openFormLink" href="#" target="_blank" rel="noopener">เปิดแบบฟอร์มในหน้าใหม่</a>
           </div>
         </div>
       </div>
@@ -493,7 +451,10 @@
 
     <section id="faq" class="section">
       <div class="container">
-        <div class="section-title"><div class="eyebrow">FAQ</div><h2>คำถามที่พบบ่อย</h2></div>
+        <div class="section-title">
+          <div class="eyebrow">FAQ</div>
+          <h2>คำถามที่พบบ่อย</h2>
+        </div>
         <div class="rule-list">
           <details open><summary>ส่งผลงานได้กี่ผลงาน?</summary><p>ผู้เข้าประกวด 1 คน สามารถส่งผลงานได้เพียง 1 ผลงานเท่านั้น</p></details>
           <details><summary>ต้องออกแบบกี่แบบ?</summary><p>ต้องออกแบบภาพตัวอย่างเสื้อครบ 6 ภาพ ได้แก่ 5 คณะสี และเสื้อสีเขียว–เหลือง</p></details>
@@ -507,15 +468,14 @@
 
   <footer class="footer">
     <div class="container">
-      <strong>พัฒนาโดย นายกฤษณพล ทองอุ่น</strong>
-      งานคณะสี กลุ่มบริหารกิจการนักเรียน<br>
-      โรงเรียนเทพศิรินทร์ นนทบุรี
+      <strong>งานคณะสี กลุ่มบริหารงานกิจการนักเรียน</strong>
+      โรงเรียนเทพศิรินทร์ นนทบุรี<br>
+      การประกวดออกแบบเสื้อกีฬาสีภายใน ประจำปีการศึกษา 2569
     </div>
   </footer>
 
   <script>
     const FORM_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyo_k_FH8U4ZW6YM0uDthDTbEKq5jvXe6jjex5rJbgK4ONTGKRv4wCWuTofufqKYxDE7w/exec';
-
     const applyFrame = document.getElementById('applyFrame');
     const frameFallback = document.getElementById('frameFallback');
     const openFormLink = document.getElementById('openFormLink');
